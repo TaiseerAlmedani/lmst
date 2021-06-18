@@ -88,7 +88,7 @@ return [
     'layout_fixed_sidebar' => null,
     'layout_fixed_navbar' => null,
     'layout_fixed_footer' => null,
-    'layout_dark_mode' => null,
+    'layout_dark_mode' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -253,58 +253,67 @@ return [
             'label'       => 4,
             'label_color' => 'success',
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'Useres Settings'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
+            'text' => 'manage useres',
             'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'level_one',
+                    'text' => 'Browse',
                     'url'  => '#',
                 ],
                 [
-                    'text'    => 'level_one',
+                    'text'    => 'Add new',
                     'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
+        ],
+    ],
+],
+        // [
+        //     'text' => 'Browse',
+        //     'url'  => 'admin/settings',
+        //     'icon' => 'fas fa-fw fa-lock',
+        // ],
+        [
+            'text'    => 'Course',
+            'icon'    => 'fas fa-fw fa-lock',
+            'submenu' => [
                 [
-                    'text' => 'level_one',
+                    'text' => 'Browse',
                     'url'  => '#',
                 ],
+                [
+                    'text'    => 'Add new course',
+                    'url'     => '#',
+                        ],
+                        // [
+                        //     'text' => 'Paid course',
+                        //     'url'  => '#',
+                        // ],
+                        // [
+                        //     'text'    => 'level_two',
+                        //     'url'     => '#',
+                        //     'submenu' => [
+                        //         [
+                        //             'text' => 'level_three',
+                        //             'url'  => '#',
+                        //         ],
+                        //         [
+                        //             'text' => 'level_three',
+                        //             'url'  => '#',
+                        //         ],
+                        //     ],
+                        // ],
+                //     ],
+                // ],
+                // [
+                //     'text' => 'level_one',
+                //     'url'  => '#',
+                // ],
             ],
         ],
-        ['header' => 'labels'],
+        ['header' => 'General'],
         [
-            'text'       => 'important',
+            'text'       => 'statistic',
             'icon_color' => 'red',
             'url'        => '#',
         ],
