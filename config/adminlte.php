@@ -255,7 +255,7 @@ return [
         ],
         ['header' => 'Useres Settings'],
         [
-            'text' => 'manage useres',
+            'text' => 'Users',
             'icon' => 'fas fa-fw fa-user',
             'submenu' => [
                 [
@@ -263,8 +263,8 @@ return [
                     'url'  => '#',
                 ],
                 [
-                    'text'    => 'Add new',
-                    'url'     => '#',
+                    'text'    => 'Add new user',
+                    'url'     => 'admin/users/create',
         ],
     ],
 ],
@@ -274,7 +274,7 @@ return [
         //     'icon' => 'fas fa-fw fa-lock',
         // ],
         [
-            'text'    => 'Course',
+            'text'    => 'Courses',
             'icon'    => 'fas fa-fw fa-lock',
             'submenu' => [
                 [
@@ -283,7 +283,7 @@ return [
                 ],
                 [
                     'text'    => 'Add new course',
-                    'url'     => '#',
+                    'url'     => 'admin/courses/create',
                         ],
                         // [
                         //     'text' => 'Paid course',
@@ -317,16 +317,16 @@ return [
             'icon_color' => 'red',
             'url'        => '#',
         ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+        // [
+        //     'text'       => 'warning',
+        //     'icon_color' => 'yellow',
+        //     'url'        => '#',
+        // ],
+        // [
+        //     'text'       => 'information',
+        //     'icon_color' => 'cyan',
+        //     'url'        => '#',
+        // ],
     ],
 
     /*
