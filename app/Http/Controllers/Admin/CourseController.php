@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Course;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,10 @@ class CourseController extends Controller
      */
     public function index()
     {
-        return view('admin.courses.index');
+        $courses = Course::all();
+        $categories = Category::all();
+
+       return view('courses.index' ,['courses' => $courses , 'categories' => $categories]);
     }
 
     /**
