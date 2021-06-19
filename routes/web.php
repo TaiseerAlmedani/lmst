@@ -32,6 +32,12 @@ Route::get('/admin/pages', function () {
     return view('admin.page');
 });
 
+
+Route::get('/admin', function () {
+
+    return view('admin.home');
+});
+
 Route::resource('course',CourseController::class);
 
 Route::name('admin.')->prefix('admin')->group(function () {

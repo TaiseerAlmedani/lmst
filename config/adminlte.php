@@ -351,7 +351,7 @@ return [
                     'url'  => 'admin/tags',
                 ],
                 [
-                    'text'    => 'Add new Category',
+                    'text'    => 'Add new Tag',
                     'url'     => 'admin/tags/create',
                         ],
 
