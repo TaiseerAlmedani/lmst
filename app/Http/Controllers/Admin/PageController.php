@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Course;
 use Illuminate\Http\Request;
 
-class CourseController extends Controller
+class PageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class CourseController extends Controller
      */
     public function index()
     {
-        return view('admin.courses.index');
+        //
     }
 
     /**
@@ -25,7 +24,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        return view('admin.courses.create');
+        //
     }
 
     /**
@@ -36,17 +35,16 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-
-        dd($request->all());
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Course  $course
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Course $course)
+    public function show($id)
     {
         //
     }
@@ -54,10 +52,10 @@ class CourseController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Course  $course
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Course $course)
+    public function edit($id)
     {
         //
     }
@@ -66,10 +64,10 @@ class CourseController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Course  $course
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Course $course)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -77,10 +75,10 @@ class CourseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Course  $course
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Course $course)
+    public function destroy($id)
     {
         //
     }
