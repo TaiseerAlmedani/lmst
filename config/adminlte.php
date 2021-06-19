@@ -260,12 +260,13 @@ return [
             'submenu' => [
                 [
                     'text' => 'Browse',
-                    'url'  => '#',
+                    'url'  => 'admin/users',
                 ],
                 [
                     'text'    => 'Add new user',
                     'url'     => 'admin/users/create',
         ],
+
     ],
 ],
         // [
@@ -279,7 +280,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Browse',
-                    'url'  => '#',
+                    'url'  => 'admin/courses',
                 ],
                 [
                     'text'    => 'Add new course',
@@ -311,6 +312,52 @@ return [
                 // ],
             ],
         ],
+        [
+            'text'    => 'Categories',
+            'icon'    => 'fas fa-fw fa-lock',
+            'submenu' => [
+                [
+                    'text' => 'Browse',
+                    'url'  => 'admin/categories',
+                ],
+                [
+                    'text'    => 'Add new Category',
+                    'url'     => 'admin/categories/create',
+                        ],
+
+            ],
+        ],
+        [
+            'text'    => 'Sections',
+            'icon'    => 'fas fa-fw fa-lock',
+            'submenu' => [
+                [
+                    'text' => 'Browse',
+                    'url'  => 'admin/sections',
+                ],
+                [
+                    'text'    => 'Add new Category',
+                    'url'     => 'admin/sections/create',
+                        ],
+
+            ],
+        ],
+        [
+            'text'    => 'Tags',
+            'icon'    => 'fas fa-fw fa-lock',
+            'submenu' => [
+                [
+                    'text' => 'Browse',
+                    'url'  => 'admin/tags',
+                ],
+                [
+                    'text'    => 'Add new Category',
+                    'url'     => 'admin/tags/create',
+                        ],
+
+            ],
+        ],
+
         ['header' => 'General'],
         [
             'text'       => 'statistic',

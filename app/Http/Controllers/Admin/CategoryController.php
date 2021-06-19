@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
-class UserContoller extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,9 @@ class UserContoller extends Controller
      */
     public function index()
     {
-        return view('admin.users.index');
+        // $categories = Category::all();
+
+        return view('admin.categories.index');
     }
 
     /**
@@ -24,8 +27,7 @@ class UserContoller extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
-
+        return view('admin.categories.create');
     }
 
     /**

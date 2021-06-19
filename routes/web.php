@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\Admin\SectionsController;
+use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\UserContoller;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageCourseController;
@@ -22,6 +25,10 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+Route::get('/admin/pages', function () {
+
+    return view('admin.page');
+});
 
 Route::name('admin.')->prefix('admin')->group(function () {
     Route::resource('courses', CourseController::class);
@@ -35,4 +42,17 @@ Route::name('admin.')->prefix('admin')->group(function () {
 Route::get('/',[HomeController::class,'index'])->name('home');
 
 
-Route::resource('course',PageCourseController::class);
+Route::name('admin.')->prefix('admin')->group(function () {
+    Route::resource('categories', CategoryController::class);
+});
+
+Route::name('admin.')->prefix('admin')->group(function () {
+    Route::resource('sections', SectionsController::class);
+});
+
+
+Route::name('admin.')->prefix('admin')->group(function () {
+    Route::resource('tags', TagController::class);
+});
+
+
