@@ -50,7 +50,7 @@ class PageCourseController extends Controller
      */
     public function show(Course $course)
     {
-
+        // dd($course);
         return view('courses.show' ,['course' => $course]);
     }
 

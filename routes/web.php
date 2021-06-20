@@ -25,31 +25,20 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/',[HomeController::class,'index'])->name('home');
-
 Route::get('/admin/pages', function () {
 
     return view('admin.page');
 });
-
-
-Route::get('/admin', function () {
-
-    return view('admin.home');
-});
-
-Route::resource('course',CourseController::class);
 
 Route::name('admin.')->prefix('admin')->group(function () {
     Route::resource('courses', CourseController::class);
 });
 
 
-
 Route::name('admin.')->prefix('admin')->group(function () {
     Route::resource('users', UserContoller::class);
 });
-
+Route::get('/',[HomeController::class,'index'])->name('home');
 
 
 Route::name('admin.')->prefix('admin')->group(function () {
@@ -67,5 +56,5 @@ Route::name('admin.')->prefix('admin')->group(function () {
 
 
 
-
+Route::resource('course',PageCourseController::class);
 

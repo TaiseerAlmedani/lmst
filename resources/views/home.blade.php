@@ -34,7 +34,7 @@
                     <div class="content">
                       <h4>{{ $course->slug }}</h4>
                       <p>{{ $course->description }}</p>
-                    <a href="">
+                    <a href="{{ route('course.show' , $course) }}">
                       <span class="button is-link modal-button is-fullwidth">View</span>
                     </a>
                     </div>
