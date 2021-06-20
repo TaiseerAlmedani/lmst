@@ -19,7 +19,7 @@ class CourseController extends Controller
         $courses = Course::all();
         $categories = Category::all();
 
-       return view('admin.courses.index' ,['courses' => $courses , 'categories' => $categories]);
+       return view('courses.index' ,['courses' => $courses , 'categories' => $categories]);
     }
 
     /**
