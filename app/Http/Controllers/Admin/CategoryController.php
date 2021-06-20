@@ -38,7 +38,15 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|min:2|max:30',
+            'slug' => 'required|min:2|max:30'
+        ]);
+
+        $category = Category::create(['name' => $request->name, 'slug' => $request->slug]);
+
+        return view("admin.home");
+
     }
 
     /**

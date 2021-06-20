@@ -11,7 +11,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('admin.courses.store') }}" method="POST">
+                    <form action="{{ route('admin.categories.store') }}" method="POST">
                         @csrf
                         <x-adminlte-input name="name" type="text" placeholder="Category Name" />
                         <x-adminlte-input name="slug" type="text" placeholder="Category Slug" />

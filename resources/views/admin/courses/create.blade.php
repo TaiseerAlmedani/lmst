@@ -35,6 +35,9 @@
                             </div> --}}
                         </x-slot>
                         <option/>
+                        @foreach ($categories as $category )
+
+                        @endforeach
                         <option>Category 1</option>
                         <option>Category 2 </option>
                         <option>Category 3</option>
