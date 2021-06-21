@@ -15,9 +15,6 @@
     </x-slot>
     <section class="hero is-warning">
         <x-navbar />
-
-
-
         <div class="hero-body">
             <div class="container">
                 <div class="columns">

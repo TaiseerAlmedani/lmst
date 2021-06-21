@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Course;
+use App\Models\Section;
 use Illuminate\Http\Request;
 
 class SectionsController extends Controller
@@ -13,8 +15,12 @@ class SectionsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('admin.sections.index');
+
+    {   $sections = Section::all();
+        $course   = Course::all();
+
+        return view('admin.sections.index' , ['sections' => $sections, 'courses' => $course] );
+
     }
 
     /**
@@ -24,7 +30,8 @@ class SectionsController extends Controller
      */
     public function create()
     {
-        return view('admin.sections.create');
+        $courses = Course::all();
+        return view('admin.sections.create', ['courses' => $courses]);
     }
 
     /**
@@ -35,7 +42,21 @@ class SectionsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'          => 'required|min:3|max:30',
+            'slug'          => 'required|min:3|max:30',
+            'number'        => 'required|numeric',
+            'course_id'     => 'required',
+        ]);
+
+        $course = Section::create([
+            'name'          => $request->name,
+            'slug'          => $request->slug,
+            'number'          => $request->number,
+            'course_id'          => $request->course_id,
+        ]);
+
+        return view('admin.home');
     }
 
     /**

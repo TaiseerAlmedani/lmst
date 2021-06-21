@@ -17,9 +17,9 @@ class CreateCoursesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
-            $table->string('course_img');
+            $table->string('course_img')->default(1);
             $table->string('teacher_name');
-            $table->string('teacher_img');
+            $table->string('teacher_img')->default(1);
             $table->integer('price');
             $table->text('description');
             $table->integer('rate');

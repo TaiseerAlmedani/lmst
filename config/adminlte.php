@@ -336,7 +336,7 @@ return [
                     'url'  => 'admin/sections',
                 ],
                 [
-                    'text'    => 'Add new Category',
+                    'text'    => 'Add new Sections',
                     'url'     => 'admin/sections/create',
                         ],
 
