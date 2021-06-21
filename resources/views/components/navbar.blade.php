@@ -2,8 +2,8 @@
     <nav class="navbar">
         <div class="container">
             <div class="navbar-brand">
-                <a class="navbar-item" href="../">
-                    <img src="http://bulma.io/images/bulma-type-white.png" alt="Logo">
+                <a  href="../">
+                    <img src="{{asset('/images/logo_siraj.png')}}" width="120">
                 </a>
                 <span class="navbar-burger burger" data-target="navbarMenu">
                     <span></span>
@@ -14,7 +14,7 @@
             <div id="navbarMenu" class="navbar-menu">
                 <div class="navbar-end">
                     <span class="navbar-item">
-                        <a class="button is-white is-outlined" href="{{ route('home') }}">
+                        <a class="button is-warning  has-text-black is-outlined" href="{{ route('home') }}">
                             <span class="icon">
                                 <i class="mdi mdi-home"></i>
                             </span>
@@ -22,7 +22,7 @@
                         </a>
                     </span>
                     <span class="navbar-item">
-                        <a class="button is-white is-outlined" href="{{ route('course.index') }}">
+                        <a class="button is-warning  has-text-black is-outlined" href="{{ route('course.index') }}">
                             <span class="icon">
                                 <i class="mdi mdi-school"></i>
                             </span>
@@ -30,7 +30,7 @@
                         </a>
                     </span>
                     <span class="navbar-item">
-                        <a class="button is-white is-outlined" href="#">
+                        <a class="button is-warning has-text-black is-outlined" href="#">
                             <span class="icon">
                                 <i class="mdi mdi-book"></i>
                             </span>
@@ -38,7 +38,7 @@
                         </a>
                     </span>
                     <span class="navbar-item">
-                        <a class="button is-white is-outlined" href="#">
+                        <a class="button is-warning has-text-black is-outlined" href="#">
                             <span class="icon">
                                 <i class="mdi mdi-github"></i>
                             </span>
