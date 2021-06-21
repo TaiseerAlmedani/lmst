@@ -11,12 +11,10 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    @php
-                        $heads = ['ID', ['label' => 'Category Name', 'width' => 30], ['label' => 'Actions', 'no-export' => true]];
 
                         $btnEdit = '<a href="#">
                             <button class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit">
-                                        <yi class="fa fa-lg fa-fw fa-pen"></i>
+                                        <i class="fa fa-lg fa-fw fa-pen"></i>
                                     </button>
                             </a>';
                         $btnDelete = '<button class="btn btn-xs btn-default text-danger mx-1 shadow" title="Delete">

@@ -14,7 +14,7 @@ class AddOutlineToCoursesTable extends Migration
     public function up()
     {
         Schema::table('courses', function (Blueprint $table) {
-            $table->string('outline')->after('description')->default(1);
+            $table->string('outline')->after('description');
         });
     }
 

@@ -19,7 +19,7 @@ class CourseController extends Controller
         $courses = Course::all();
         $categories = Category::all();
 
-       return view('admin.courses.index' ,['courses' => $courses , 'categories' => $categories]);
+       return view('courses.index' ,['courses' => $courses , 'categories' => $categories]);
     }
 
     /**
@@ -40,34 +40,8 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name'              => 'required|min:3|max:30',
-            'slug'              => 'required|min:3|max:30',
-            'course_img'        => 'required',
-            'teacher_name'      => 'required|min:3|max:30',
-            'teacher_img'       => 'required',
-            'outline'           => 'required|min:30|max:60',
-            'price'             => 'required|numeric|',
-            'description'       => 'required|min:30|max:100',
-            'category_id'       => 'required',
-        ]);
 
-
-        // dd($request->all());
-        $course = Course::create([
-            'name'          => $request->name ,
-            'slug'          => $request->slug,
-            'course_img'    => $request->course_img,
-            'teacher_img'   => $request->teacher_img ,
-            'teacher_name'   => $request->teacher_name ,
-            'outline'       => $request->outline ,
-            'price'         => $request->price ,
-            'description'   => $request->description ,
-            'category_id'   => $request->category_id ,
-            'rate'          => '0',
-        ]);
-
-        return view('admin.home');
+        dd($request->all());
     }
 
     /**
