@@ -336,7 +336,7 @@ return [
                     'url'  => 'admin/sections',
                 ],
                 [
-                    'text'    => 'Add new Category',
+                    'text'    => 'Add new Sections',
                     'url'     => 'admin/sections/create',
                         ],
 
@@ -348,15 +348,16 @@ return [
             'submenu' => [
                 [
                     'text' => 'Browse',
-                    'url'  => 'admin/sections',
+                    'url'  => 'admin/lessons',
                 ],
                 [
-                    'text'    => 'Add new Sections',
-                    'url'     => 'admin/sections/create',
+                    'text'    => 'Add new Lesson',
+                    'url'     => 'admin/lessons/create',
                         ],
 
             ],
         ],
+
         [
             'text'    => 'Tags',
             'icon'    => 'fas fa-fw fa-lock',

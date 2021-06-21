@@ -3,7 +3,7 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1 class="m-0 ">All Sections</h1>
+    <h1 class="m-0 ">All Lessons</h1>
 @stop
 
 @section('content')
@@ -12,23 +12,21 @@
             <div class="card">
                 <div class="card-body">
                     @php
-                        $heads = ['ID', ['label' => 'Sections Name', 'width' => 30], ['label' => 'Actions', 'no-export' => true]];
+                        $heads = ['ID', ['label' => 'Lesson URL', 'width' => 30],'Type', ['label' => 'Actions', 'no-export' => true]];
 
-                        $btnEdit = '<a href="#">
-                            <button class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit">
-                                                                <i class="fa fa-lg fa-fw fa-pen"></i>
-                                                            </button>
-                                                            </a>';
+                        $btnEdit = '<button class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit">
+                                        <i class="fa fa-lg fa-fw fa-pen"></i>
+                                    </button>';
                         $btnDelete = '<button class="btn btn-xs btn-default text-danger mx-1 shadow" title="Delete">
-                                                                <i class="fa fa-lg fa-fw fa-trash"></i>
-                                                              </button>';
+                                        <i class="fa fa-lg fa-fw fa-trash"></i>
+                                      </button>';
                         $btnDetails = '<button class="btn btn-xs btn-default text-teal mx-1 shadow ml-0 pl-0" title="Details">
-                                                                    <i class="fa fa-lg fa-fw fa-eye"></i>
-                                                                </button>';
+                                            <i class="fa fa-lg fa-fw fa-eye"></i>
+                                        </button>';
 
                         $data = [];
-                        foreach ($sections as $section) {
-                            $data[] = [$section->id, $section->name, $btnEdit, $btnDelete, $btnDetails];
+                        foreach ($lessons as $lesson) {
+                            $data[] = [$lesson->id, $lesson->name ,$lesson->type,  $btnEdit, $btnDelete, $btnDetails,];
                         }
 
                         $config = [

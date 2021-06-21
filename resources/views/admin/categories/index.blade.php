@@ -11,22 +11,23 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-
+                    @php
+                        $heads = ['ID', ['label' => 'Category Name', 'width' => 30], ['label' => 'Actions', 'no-export' => true]];
                         $btnEdit = '<a href="#">
-                            <button class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit">
-                                        <i class="fa fa-lg fa-fw fa-pen"></i>
-                                    </button>
-                            </a>';
+                                                                            <button class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit">
+                                                                                        <i class="fa fa-lg fa-fw fa-pen"></i>
+                                                                                    </button>
+                                                                            </a>';
                         $btnDelete = '<button class="btn btn-xs btn-default text-danger mx-1 shadow" title="Delete">
-                                        <i class="fa fa-lg fa-fw fa-trash"></i>
-                                      </button>';
+                                                                                        <i class="fa fa-lg fa-fw fa-trash"></i>
+                                                                                      </button>';
                         $btnDetails = '<button class="btn btn-xs btn-default text-teal mx-1 shadow ml-0 pl-0" title="Details">
-                                            <i class="fa fa-lg fa-fw fa-eye"></i>
-                                        </button>';
+                                                                                            <i class="fa fa-lg fa-fw fa-eye"></i>
+                                                                                        </button>';
 
                         $data = [];
                         foreach ($categories as $category) {
-                            $data[] = [$category->id, $category->name , $btnEdit, $btnDelete, $btnDetails,];
+                            $data[] = [$category->id, $category->name, $btnEdit, $btnDelete, $btnDetails];
                         }
 
                         $config = [

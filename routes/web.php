@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\Admin\LessonController;
 use App\Http\Controllers\Admin\SectionsController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\UserContoller;
@@ -56,6 +57,13 @@ Route::name('admin.')->prefix('admin')->group(function () {
 Route::name('admin.')->prefix('admin')->group(function () {
     Route::resource('sections', SectionsController::class);
 });
+
+Route::name('admin.')->prefix('admin')->group(function () {
+    Route::resource('lessons', LessonController::class);
+});
+
+
+
 
 
 Route::name('admin.')->prefix('admin')->group(function () {

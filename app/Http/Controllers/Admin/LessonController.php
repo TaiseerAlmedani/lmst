@@ -1,9 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Lesson;
+use App\Models\Section;
 use Illuminate\Http\Request;
+
+use function PHPSTORM_META\type;
 
 class LessonController extends Controller
 {
@@ -14,7 +18,8 @@ class LessonController extends Controller
      */
     public function index()
     {
-        //
+        $lessons = Lesson::all();
+        return view('admin.lessons.index' , ['lessons' => $lessons]);
     }
 
     /**
@@ -24,7 +29,8 @@ class LessonController extends Controller
      */
     public function create()
     {
-        //
+        $sections = Section::all();
+        return view('admin.lessons.create' , ['sections' => $sections]);
     }
 
     /**
@@ -35,16 +41,31 @@ class LessonController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|url',
+            'slug' => 'required|min:3',
+            'type' => 'required',
+            'section_id' => 'required',
+        ]);
+
+        $lesson = Lesson::create([
+            'name'          => $request->name ,
+            'slug'          => $request->slug,
+            'type'          => $request->type,
+            'section_id'          => $request->section_id,
+
+        ]);
+
+        return view('admin.home');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Lesson  $lesson
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Lesson $lesson)
+    public function show($id)
     {
         //
     }
@@ -52,10 +73,10 @@ class LessonController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Lesson  $lesson
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Lesson $lesson)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +85,10 @@ class LessonController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Lesson  $lesson
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Lesson $lesson)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +96,10 @@ class LessonController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Lesson  $lesson
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Lesson $lesson)
+    public function destroy($id)
     {
         //
     }
