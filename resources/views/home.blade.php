@@ -1,18 +1,25 @@
 <x-layouts.app>
-    <section class="hero is-info is-fullheight">
+    <section class="hero  is-fullheight">
         <div class="hero-head">
             <x-navbar/>
         </div>
         <div class="hero-body">
-            <div class="container has-text-centered">
-                <div class="column is-6 is-offset-3">
-                    <h1 class="title">
-                        Seeram
-                        Learning Mangment System
-                    </h1>
-                    <h1 class="subtitle is-size-4">
-                        A People Without Education Is Like A Building Without A Foundation
-                    </h1>
+            <div class="container has-text-left">
+                <div class="columns mt-6">
+                    <div class="column is-4 ml-4 mt-12">
+                        <h1 class="title has-text-weight-bold is-size-1 mb-0">
+                            SIRAJ
+                        </h1>
+                        <h4 class="subtitle is-size-4 mb-4">
+                            A People Without Education Is Like<br>A Building Without A Foundation
+                        </h4>
+                        <div class="buttons">
+                            <button class="button is-warning is-large has-text-weight-light has-text-dark">PICK A COURSE</button>
+                        </div>
+                    </div>
+                    <div class="column is-8" style="margin-top: -7%; margin-left: 5%">
+                        <img src="{{asset('/images/header.png')}}" width="690" >
+                    </div>
                 </div>
             </div>
         </div>
