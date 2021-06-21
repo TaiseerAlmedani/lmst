@@ -13,8 +13,8 @@
 
         </style>
     </x-slot>
+    <x-navbar />
     <section class="hero is-warning">
-        <x-navbar />
 
 
 

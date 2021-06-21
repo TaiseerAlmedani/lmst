@@ -1,7 +1,7 @@
 <x-layouts.app>
     <section class="hero is-info is-fullheight">
         <div class="hero-head">
-            <x-navbar/>
+            <x-navbar />
         </div>
         <div class="hero-body">
             <div class="container has-text-centered">
@@ -20,29 +20,30 @@
     </section>
     <section class="section">
         <div class="continer m-6">
-            @foreach ( $categories as $category )
+            @foreach ($categories as $category)
                 <p class="is-size-3">{{ $category->slug }}</p>
-                @foreach ( $category->courses as $course )
-                <div class="owl-carousel">
-                    <div>
-                        <div class="card is-shady">
-                            <div class="card-image">
-                                <figure class="image is-4by3">
-                                <img src="{{ $course->course_img }}" alt="butterfly image" class="modal-button" data-target="modal-image4">
-                                </figure>
-                            </div>
-                            <div class="card-content  modal-button" data-target="modal-card2">
-                                <div class="content">
-                                <h4>{{ $course->slug }}</h4>
-                                <p>{{ $course->description }}</p>
-                                <a href="{{ route('course.show' , $course) }}">
-                                    <span class="button is-link modal-button is-fullwidth">View</span>
-                                </a>
+                @foreach ($category->courses as $course)
+                    <div class="owl-carousel">
+                        <div>
+                            <div class="card is-shady">
+                                <div class="card-image">
+                                    <figure class="image is-4by3">
+                                        <img src="{{ $course->course_img }}" alt="butterfly image"
+                                            class="modal-button" data-target="modal-image4">
+                                    </figure>
+                                </div>
+                                <div class="card-content  modal-button" data-target="modal-card2">
+                                    <div class="content">
+                                        <h4>{{ $course->slug }}</h4>
+                                        <p>{{ $course->description }}</p>
+                                        <a href="{{ route('course.show', $course) }}">
+                                            <span class="button is-link modal-button is-fullwidth">View</span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             @endforeach
         </div>
