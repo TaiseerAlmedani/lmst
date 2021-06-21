@@ -14,9 +14,11 @@
                     @php
                         $heads = ['ID', ['label' => 'Category Name', 'width' => 30], ['label' => 'Actions', 'no-export' => true]];
 
-                        $btnEdit = '<button class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit">
-                                        <i class="fa fa-lg fa-fw fa-pen"></i>
-                                    </button>';
+                        $btnEdit = '<a href="#">
+                            <button class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit">
+                                        <yi class="fa fa-lg fa-fw fa-pen"></i>
+                                    </button>
+                            </a>';
                         $btnDelete = '<button class="btn btn-xs btn-default text-danger mx-1 shadow" title="Delete">
                                         <i class="fa fa-lg fa-fw fa-trash"></i>
                                       </button>';
@@ -43,6 +45,7 @@
                             <tr>
                                 @foreach ($row as $cell)
                                     <td>{!! $cell !!}</td>
+
                                 @endforeach
                             </tr>
                         @endforeach

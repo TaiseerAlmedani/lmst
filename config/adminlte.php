@@ -343,6 +343,21 @@ return [
             ],
         ],
         [
+            'text'    => 'Lessons',
+            'icon'    => 'fas fa-fw fa-lock',
+            'submenu' => [
+                [
+                    'text' => 'Browse',
+                    'url'  => 'admin/sections',
+                ],
+                [
+                    'text'    => 'Add new Sections',
+                    'url'     => 'admin/sections/create',
+                        ],
+
+            ],
+        ],
+        [
             'text'    => 'Tags',
             'icon'    => 'fas fa-fw fa-lock',
             'submenu' => [

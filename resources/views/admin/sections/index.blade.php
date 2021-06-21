@@ -12,7 +12,7 @@
             <div class="card">
                 <div class="card-body">
                     @php
-                        $heads = ['ID', ['label' => 'Sections Name', 'width' => 30],'Course Name', ['label' => 'Actions', 'no-export' => true]];
+                        $heads = ['ID', ['label' => 'Sections Name', 'width' => 30], ['label' => 'Actions', 'no-export' => true]];
 
                         $btnEdit = '<button class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit">
                                         <i class="fa fa-lg fa-fw fa-pen"></i>
@@ -26,7 +26,7 @@
 
                         $data = [];
                         foreach ($sections as $section) {
-                            $data[] = [$section->id, $section->name , $section->course->name,  $btnEdit, $btnDelete, $btnDetails,];
+                            $data[] = [$section->id, $section->name ,  $btnEdit, $btnDelete, $btnDetails,];
                         }
 
                         $config = [
