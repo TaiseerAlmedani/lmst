@@ -22,8 +22,9 @@
         <div class="continer m-6">
             @foreach ($categories as $category)
                 <p class="is-size-3">{{ $category->slug }}</p>
+                <div class="owl-carousel">
                 @foreach ($category->courses as $course)
-                    <div class="owl-carousel">
+
                         <div>
                             <div class="card is-shady">
                                 <div class="card-image">
@@ -43,8 +44,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+
                 @endforeach
+            </div>
             @endforeach
         </div>
     </section>
