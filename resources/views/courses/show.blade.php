@@ -14,7 +14,7 @@
         </style>
     </x-slot>
     <x-navbar />
-    <section class="hero is-warning">
+    <section class="hero is-dark">
 
 
 
@@ -22,32 +22,38 @@
             <div class="container">
                 <div class="columns">
                     <div class="column is-6 has-text-left">
-                        <h1 class="title is-2 box has-background-info-light">
+                        <h1 class="title is-2 has-text-white">
                             {{ $course->slug }}
                         </h1>
                         <div class="columns is-gapless">
-                            <div class="mx-2">
-                                <span class="icon">
-                                    <i class="mdi mdi-star"></i>
-                                </span>
-                            </div>
-                            <div class="mx-2">
+                            <div class="mx-2 pr-4" style="border-right: 2px solid yellow">
                                 hours here
                             </div>
-                            <div class="mx-2">
+                            <div class="mx-2 pr-4" style="border-right: 2px solid yellow">
                                 tag here
                             </div>
-                            <div class="mx-2">
+                            <div class="mx-2 pr-4" style="border-right: 2px solid yellow">
                                 category here
                             </div>
-                            <div class="mx-2">
+                            <div class="mx-2 pr-6"  style="border-right: 2px solid yellow">
                                 price here
                             </div>
+                            <div class="max-2">
+                                <div class="star_icon pl-1 ">
+                                    <i class="mdi mdi-star"></i>
+                                    <i class="mdi mdi-star"></i>
+                                    <i class="mdi mdi-star"></i>
+                                    <i class="mdi mdi-star"></i>
+                                    <i class="mdi mdi-star"></i>
+                                </div>
+                            </div>
                         </div>
-                        <h2 class="subtitle is-4 has-text-left">
+                        <h2 class="subtitle is-4 has-text-left" style="margin-top: -2%; margin-bottom: 5%">
                             {{ $course->description }}
                         </h2>
-                        <br>
+                        <div class="buttons pb-6">
+                            <div class="button is-warning has-text-dark is-large pr-6 pl-6">Enroll</div>
+                        </div>
                     </div>
                     <div class="column is-5 is-offset-1">
                         <figure class="image is-4by3">
