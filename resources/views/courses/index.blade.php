@@ -22,10 +22,8 @@
         <div class="continer m-6">
             @foreach ($categories as $category)
                 <p class="is-size-3">{{ $category->slug }}</p>
-                @foreach ($category->courses as $course)
-                    <div class="owl-carousel">
                 <div class="owl-carousel">
-                    @foreach ($category->courses as $course)
+                @foreach ($category->courses as $course)
 
                         <div>
                             <div class="card is-shady">
@@ -39,7 +37,6 @@
                                     <div class="content">
                                         <h4>{{ $course->slug }}</h4>
                                         <p>{{ $course->description }}</p>
-                                        <p>{{ Str::limit($course->description, 40) }}</p>
                                         <a href="{{ route('course.show', $course) }}">
                                             <span class="button is-link modal-button is-fullwidth">View</span>
                                         </a>
@@ -47,11 +44,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
 
-                    @endforeach
-                </div>
+                @endforeach
+            </div>
             @endforeach
         </div>
     </section>
@@ -75,4 +70,5 @@
             margin: 10,
         })
     })
+
 </script>

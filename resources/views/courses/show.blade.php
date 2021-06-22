@@ -18,7 +18,7 @@
 
 
 
-        <div class="hero-body">
+        <div class="hero-body ">
             <div class="container">
                 <div class="columns">
                     <div class="column is-6 has-text-left">
@@ -65,12 +65,68 @@
         </div>
     </section>
     <section class="section">
-        <div class="columns">
-            <div class="column is-6"></div>
-            <div class="column is-6"></div>
+        <div class="columns pt-6">
+            {{------------------- course details ----------------}}
+            <div class="column is-8">
+                <section class="section">
+                    <div class="container">
+                        <div class="card is-fullwidth">
+                            <header class="card-header">
+                                <p class="card-header-title">Introduction</p>
+                                <a class="card-header-icon card-toggle">
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
+                            </header>
+                            <div class="card-content is-hidden">
+                                <div class="content">
+                                    Content goes here <small>Small text</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card is-fullwidth">
+                            <header class="card-header">
+                                <p class="card-header-title">Subject 1</p>
+                                <a class="card-header-icon card-toggle">
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
+                            </header>
+                            <div class="card-content is-hidden">
+                                <div class="content">
+                                    Some more content. Look at all this whitespace. <small>(Unless you are on mobile)</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            {{-------------- tutor card -------------------------  --}}
+            <div class="column is-4">
+
+                  <div class="tutor has-text-centered" style="padding: 2em; border: 2px solid black; border-radius:10px; position: relative; width: 80%">
+                      <img src="{{ $course->teacher_img }}" alt="hi" style="width: 160px; height:160px; border-radius: 50%; position: absolute; top: 0%; left: 50%; border: none; transform: translate(-50%, -50%)">
+                      <h2 style="padding-top: 30%; font-size: 30px; font-weight: bold">Teacher Name</h2>
+                      <p style="padding-top: 5%">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum a vitae ipsa eos, nam id velit porro dicta iusto provident.</p>
+                      <div class="social pt-6">
+                        <i class="mdi mdi-facebook" style="font-size: 30px"></i>
+                        <i class="mdi mdi-telegram" style="font-size: 30px"></i>
+                        <i class="mdi mdi-twitter" style="font-size: 30px"></i>
+                        <i class="mdi mdi-gmail" style="font-size: 30px"></i>
+                      </div>
+                  </div>
+            </div>
         </div>
     </section>
-
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+	let cardToggles = document.getElementsByClassName('card-toggle');
+	for (let i = 0; i < cardToggles.length; i++) {
+		cardToggles[i].addEventListener('click', e => {
+			e.currentTarget.parentElement.parentElement.childNodes[3].classList.toggle('is-hidden');
+		});
+	}
+});
+</script>
 
 
 
