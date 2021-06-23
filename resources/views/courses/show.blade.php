@@ -72,28 +72,49 @@
                     <div class="container">
                         <div class="card is-fullwidth">
                             <header class="card-header">
-                                <p class="card-header-title">Introduction</p>
-                                <a class="card-header-icon card-toggle">
-                                    <i class="fa fa-angle-down"></i>
-                                </a>
+                                <div class=" card-header-icon card-toggle" style="width: 100%">
+                                    <p class="card-header-title">Introduction</p>
+                                    <a class="card-header-icon card-toggle">
+                                        <i class="mdi mdi-arrow-down"></i>
+                                    </a>
+
+                                </div>
                             </header>
                             <div class="card-content is-hidden">
-                                <div class="content">
-                                    Content goes here <small>Small text</small>
+                                <div class="content pl-6">
+                                    <div class="content_file">
+                                        <i class="mdi mdi-file" style="font-size: 20px; display: inline"></i>
+                                        <p style="display: inline">file</p>
+                                    </div>
+                                    <div class="content_file pt-4">
+                                        <i class="mdi mdi-play-circle" style="margin-top: 3px; font-size: 20px; display: inline"></i>
+                                        <p style="display: inline">video</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="card is-fullwidth">
                             <header class="card-header">
-                                <p class="card-header-title">Subject 1</p>
-                                <a class="card-header-icon card-toggle">
-                                    <i class="fa fa-angle-down"></i>
-                                </a>
+                                <div class=" card-header-icon card-toggle" style="width: 100%">
+                                    <p class="card-header-title">Subject</p>
+                                    <a class="card-header-icon card-toggle">
+                                        <i class="mdi mdi-arrow-down"></i>
+                                    </a>
+                                </div>
                             </header>
                             <div class="card-content is-hidden">
                                 <div class="content">
-                                    Some more content. Look at all this whitespace. <small>(Unless you are on mobile)</small>
+                                    <div class="content pl-6">
+                                        <div class="content_file">
+                                            <i class="mdi mdi-file" style="font-size: 20px; display: inline"></i>
+                                            <p style="display: inline">file</p>
+                                        </div>
+                                        <div class="content_file pt-4">
+                                            <i class="mdi mdi-play-circle" style="margin-top: 3px; font-size: 20px; display: inline"></i>
+                                            <p style="display: inline">video</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
