@@ -32,9 +32,9 @@ class ProfileFactory extends Factory
             'country' => $this->faker->text(30),
             'gender' => $this->faker->text(20),
             'education' => $this->faker->text(100),
-            'phone' => rand(0,20),
+            'phone' => rand(1,20),
             'birthday' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
-            'user_id' => rand(0,50),
+            'user_id' => rand(1,50),
         ];
     }
 }

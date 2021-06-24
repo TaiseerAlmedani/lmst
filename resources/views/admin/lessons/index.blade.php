@@ -12,20 +12,43 @@
             <div class="card">
                 <div class="card-body">
                     @php
-                        $heads = ['ID', ['label' => 'Lesson URL', 'width' => 30],'Type', ['label' => 'Actions', 'no-export' => true]];
+                        $heads = [
+                            'ID',
+                            ['label' => 'Lesson URL', 'width' => 10],
+                            ['label' => 'Type' , 'width' => 15],
+                            ['label' => 'Actions', 'no-export' => true]];
 
-                        $btnEdit = '<button class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit">
-                                        <i class="fa fa-lg fa-fw fa-pen"></i>
-                                    </button>';
-                        $btnDelete = '<button class="btn btn-xs btn-default text-danger mx-1 shadow" title="Delete">
-                                        <i class="fa fa-lg fa-fw fa-trash"></i>
-                                      </button>';
-                        $btnDetails = '<button class="btn btn-xs btn-default text-teal mx-1 shadow ml-0 pl-0" title="Details">
-                                            <i class="fa fa-lg fa-fw fa-eye"></i>
-                                        </button>';
+
 
                         $data = [];
                         foreach ($lessons as $lesson) {
+                            $btnEdit =
+                                '<a href=" ' .
+                                    route('admin.lessons.edit', $lesson) .
+                                '">
+                                    <button class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit">
+                                      <i class="fa fa-lg fa-fw fa-pen"></i>
+                                    </button>
+                                </a>';
+                            $btnDelete =
+                                '<div>
+                                    <form action=" ' .
+                                         route('admin.lessons.destroy' , $lesson) .
+                                        ' " method="POST">
+                                        <input type="hidden" name="_token" value="' . csrf_token() .'">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button class="btn btn-xs btn-default text-danger mx-1 shadow" title="Delete">
+                                            <i class="fa fa-lg fa-fw fa-trash"></i>
+                                       </button>
+                                    </form>
+                                </div>';
+                            $btnDetails =
+                                '<a href="' .
+                                route('admin.lessons.show', $lesson) .
+                                '">
+                                    <button class="btn btn-xs btn-default text-teal mx-1 shadow " title="Details">
+                                        <i class="fa fa-lg fa-fw fa-eye"></i>
+                                    </button></a>';
                             $data[] = [$lesson->id, $lesson->name ,$lesson->type,  $btnEdit, $btnDelete, $btnDetails,];
                         }
 

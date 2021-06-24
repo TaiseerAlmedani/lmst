@@ -27,7 +27,7 @@ class LessonFactory extends Factory
             'name' => $name,
             'slug' => $name,
             'type' => $this->faker->text(30),
-            'section_id' => rand(0,20)
+            'section_id' => rand(1,20)
         ];
     }
 }

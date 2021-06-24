@@ -16,10 +16,9 @@ class SectionsController extends Controller
      */
     public function index()
     {
-        $sections = Section::all();
-        $course   = Course::all();
+        $sections = Section::paginate(15);
 
-        return view('admin.sections.index' , ['sections' => $sections, 'courses' => $course] );
+        return view('admin.sections.index' , ['sections' => $sections] );
     }
 
     /**
@@ -75,9 +74,10 @@ class SectionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Section $section)
     {
-        //
+        $courses = Course::all();
+        return view('admin.sections.edit' , ['section' => $section,'courses' => $courses]);
     }
 
     /**
@@ -98,8 +98,10 @@ class SectionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Section $section)
     {
-        //
+        $section->delete();
+
+        return view('admin.home');
     }
 }

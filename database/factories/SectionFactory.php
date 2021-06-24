@@ -24,9 +24,9 @@ class SectionFactory extends Factory
         return [
             'name' => $name,
             'slug' => $name,
-            'number'   => rand(0,10),
+            'number'   => rand(1,10),
 
-            'course_id' => rand(0,20)
+            'course_id' => rand(1,20)
         ];
     }
 }

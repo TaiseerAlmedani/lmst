@@ -12,29 +12,58 @@
             <div class="card">
                 <div class="card-body">
                     @php
-                        $heads = ['ID', ['label' => 'Sections Name', 'width' => 30], ['label' => 'Actions', 'no-export' => true]];
-
-                        $btnEdit = '<a href="#">
-                            <button class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit">
-                                                                <i class="fa fa-lg fa-fw fa-pen"></i>
-                                                            </button>
-                                                            </a>';
-                        $btnDelete = '<button class="btn btn-xs btn-default text-danger mx-1 shadow" title="Delete">
-                                                                <i class="fa fa-lg fa-fw fa-trash"></i>
-                                                              </button>';
-                        $btnDetails = '<button class="btn btn-xs btn-default text-teal mx-1 shadow ml-0 pl-0" title="Details">
-                                                                    <i class="fa fa-lg fa-fw fa-eye"></i>
-                                                                </button>';
-
+                        $heads = [
+                            'ID',
+                            ['label' => 'Sections Name', 'width' => 25],
+                            'course name',
+                            ['label' => 'Actions', 'no-export' => true]
+                        ];
                         $data = [];
                         foreach ($sections as $section) {
-                            $data[] = [$section->id, $section->name, $btnEdit, $btnDelete, $btnDetails];
+                            $btnEdit =
+                                '<a href=" ' .
+                                    route('admin.sections.edit', $section) .
+                                '">
+                                    <button class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit">
+                                        <i class="fa fa-lg fa-fw fa-pen"></i>
+                                    </button>
+                                </a>';
+                                $btnDelete =
+                                    '<div>
+                                        <form action=" ' .
+                                            route('admin.sections.destroy' , $section) .
+                                            ' " method="POST">
+                                            <input type="hidden" name="_token" value="' . csrf_token() .'">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <button class="btn btn-xs btn-default text-danger mx-1 shadow" title="Delete">
+                                                <i class="fa fa-lg fa-fw fa-trash"></i>
+                                        </button>
+                                        </form>
+                                    </div>';
+                            $btnDetails =
+                                '<a href="' .
+                                    route('admin.sections.show', $section) .
+                                '">
+                                    <button class="btn btn-xs btn-default text-teal mx-1 shadow " title="Details">
+                                        <i class="fa fa-lg fa-fw fa-eye"></i>
+                                    </button></a>';
+                            $data[] = [
+                                $section->id,
+                                $section->name,
+                                $section->course->name,
+                                $btnEdit ,
+                                $btnDelete ,
+                                $btnDetails,
+                            ];
                         }
 
                         $config = [
                             'data' => $data,
                             'order' => [[1, 'asc']],
                             'columns' => [null, null, null, ['orderable' => false]],
+                            'paging' => true,
+                            // 'with-buttons'  => true,
+                            // 'with-footer'   => true
                         ];
 
                     @endphp

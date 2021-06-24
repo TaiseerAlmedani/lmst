@@ -3,7 +3,7 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1 class="m-0 ">Add new Lesson</h1>
+    <h1 class="m-0 ">Edit {{ $lesson->name }}</h1>
 @stop
 
 @section('content')
@@ -11,12 +11,13 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('admin.lessons.store') }}" method="POST">
+                    <form action="{{ route('admin.lessons.update', $lesson) }}" method="POST">
                         @csrf
-                        <x-adminlte-input name="name" type="text" placeholder="Lesson Name" />
-                        <x-adminlte-input name="slug" type="text" placeholder="Lesson Slug" />
+                        <input type="hidden" name="_method" value="PUT">
+                        <x-adminlte-input name="name" value="{{ $lesson->name }}" type="text" placeholder="Lesson Name" />
+                        <x-adminlte-input name="slug" value="{{ $lesson->slug }}" type="text" placeholder="Lesson Slug" />
 
-                        <x-adminlte-select2 name="type" label="Type Lesson" label-class="text-lightblue"
+                        <x-adminlte-select2 name="type" value="{{ $lesson->type }}" label="Type Lesson" label-class="text-lightblue"
                         igroup-size="lg" data-placeholder="Select an option...">
                         <x-slot name="type">
                         </x-slot>
@@ -24,9 +25,6 @@
 
                             <option value="video">Video</option>
                             <option value="pdf">PDF</option>
-
-
-
                     </x-adminlte-select2>
                         <x-adminlte-select2 name="section_id" label="Section Name" label-class="text-lightblue"
                         igroup-size="lg" data-placeholder="Select an option...">

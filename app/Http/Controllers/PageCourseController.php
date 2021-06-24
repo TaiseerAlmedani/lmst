@@ -15,10 +15,12 @@ class PageCourseController extends Controller
      */
     public function index()
     {
+
         $courses = Course::orderBy('updated_at', 'desc')->limit(7)->get();
         $categories = Category::all();
 
        return view('courses.index' ,['courses' => $courses , 'categories' => $categories]);
+
     }
 
     /**

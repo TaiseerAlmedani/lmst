@@ -18,6 +18,7 @@ class CategoryController extends Controller
         $categories = Category::all();
 
         return view('admin.categories.index',['categories' => $categories]);
+
     }
 
     /**
@@ -66,9 +67,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        //
+        return view('admin.categories.edit' , ['category' => $category]);
     }
 
     /**
@@ -78,10 +79,21 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        //
+
+        $request->validate([
+            'name' => 'required|min:3|max:30',
+            'slug' => 'required|min:3|max:30',
+        ]);
+
+        $category->update($request->all());
+        $categories = Category::all();
+        return view('admin.categories.index' , ['categories' =>$categories]);
+
     }
+
+
 
     /**
      * Remove the specified resource from storage.
@@ -89,8 +101,11 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        //
+        $category->delete();
+
+        return view("admin.home");
+
     }
 }

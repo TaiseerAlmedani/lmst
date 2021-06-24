@@ -21,6 +21,7 @@ class CreateCoursesTable extends Migration
             $table->string('teacher_name');
             $table->string('teacher_img')->default(1);
             $table->integer('price');
+            $table->integer('hours');
             $table->text('description');
             $table->integer('rate');
             $table->foreignId('category_id');

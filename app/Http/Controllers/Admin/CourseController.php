@@ -45,6 +45,7 @@ class CourseController extends Controller
             'name'              => 'required|min:3|max:30',
             'slug'              => 'required|min:3|max:30',
             'course_img'        => 'required',
+            'hours'             =>'required|numeric',
             'teacher_name'      => 'required|min:3|max:30',
             'teacher_img'       => 'required',
             'outline'           => 'required|min:30|max:60',
@@ -64,6 +65,7 @@ class CourseController extends Controller
             'description'   => $request->description ,
             'category_id'   => $request->category_id ,
             'rate'          => '0',
+            'hours'         => $request->hours,
         ]);
 
         return view('admin.home');
@@ -90,7 +92,8 @@ class CourseController extends Controller
      */
     public function edit(Course $course)
     {
-        //
+        $categories = Category::all();
+        return view('admin.courses.edit' , ['course' => $course , 'categories' => $categories]);
     }
 
     /**
@@ -102,7 +105,23 @@ class CourseController extends Controller
      */
     public function update(Request $request, Course $course)
     {
-        //
+        $request->validate([
+            'name'              => 'required|min:3|max:30',
+            'slug'              => 'required|min:3|max:30',
+            'course_img'        => 'required|url',
+            'teacher_name'      => 'required|min:3|max:30',
+            'teacher_img'       => 'required|url',
+            'hours'             =>'required|numeric',
+            'outline'           => 'required|min:30|max:60',
+            'price'             => 'required|numeric|',
+            'description'       => 'required|min:30|max:100',
+            'category_id'       => 'required',
+        ]);
+
+        $course->update($request->all());
+        $courses = Course::all();
+
+        return view('admin.courses.index' , ['courses' => $courses]);
     }
 
     /**
@@ -113,6 +132,10 @@ class CourseController extends Controller
      */
     public function destroy(Course $course)
     {
-        //
+        $course->delete();
+
+        $courses = Course::all();
+
+        return view('admin.courses.index' ,['courses' => $courses] );
     }
 }

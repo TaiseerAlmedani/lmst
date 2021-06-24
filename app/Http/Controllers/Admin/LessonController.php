@@ -76,9 +76,10 @@ class LessonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Lesson $lesson)
     {
-        //
+        $sections = Section::all();
+        return view('admin.lessons.edit' , ['lesson' => $lesson,'sections' => $sections]);
     }
 
     /**
@@ -88,9 +89,19 @@ class LessonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Lesson $lesson)
     {
-        //
+        $request->validate([
+            'name' => 'required|url',
+            'slug' => 'required|min:3',
+            'type' => 'required',
+            'section_id' => 'required',
+        ]);
+
+        $lesson->update($request->all());
+        $lessons = Lesson::all();
+        return view('admin.lessons.index' , ['lessons' => $lessons  ] );
+
     }
 
     /**
@@ -99,8 +110,10 @@ class LessonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Lesson $lesson)
     {
-        //
+        $lesson->delete();
+        $lessons = Lesson::all();
+        return view('admin.lessons.index' , ['lessons' => $lessons]);
     }
 }

@@ -20,6 +20,7 @@
                         <x-adminlte-input name="teacher_img" type="text" placeholder="Teacher Image" />
                         <x-adminlte-input name="outline" type="text" placeholder="Simple Description" />
                         <x-adminlte-input name="price" type="number" placeholder="Price" />
+                        <x-adminlte-input name="hours" type="number" placeholder="hours" />
                         <x-adminlte-textarea name="description" label="Description" rows=5 label-class="text-warning"
                             igroup-size="sm" placeholder="Insert description...">
                             <x-slot name="prependSlot">
@@ -37,9 +38,7 @@
                             @foreach ($categories as $category )
                             <option value="{{ $category->id }}">{{ $category->slug }}</option>
                         @endforeach
-                            <option>Category 1</option>
-                            <option>Category 2 </option>
-                            <option>Category 3</option>
+
 
                         </x-adminlte-select2>
                         <x-adminlte-button class="btn-flat" type="submit" label="Submit" theme="success"

@@ -28,10 +28,11 @@ class CourseFactory extends Factory
             'course_img' => 'https://source.unsplash.com/random',
            'teacher_name' => $this->faker->text(30),
            'teacher_img'=> 'https://i.pinimg.com/474x/38/1e/c0/381ec006034984c22f0db62451b10e67.jpg',
-           'price' => rand(0,2000),
+           'price' => rand(10,2000),
            'description' => $this->faker->text(100),
            'rate' => rand(0,5),
-           'category_id' => rand(0,20),
+           'category_id' => rand(1,20),
+           'hours' => rand(1,40),
            'outline' => $this->faker->text(30),
         ];
     }
