@@ -78,8 +78,8 @@
 
     /*************Copyright Segment*************/
                 .cpyright-footer { /*shared with header */
-                    border-color: #333;
-                    background-color: #333;
+                    border-color: #363636;
+                    background-color: #363636;
                     color: #ccc;
                     font-size: 16px;
                     min-height: 63px;

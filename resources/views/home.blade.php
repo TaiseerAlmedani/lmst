@@ -1,4 +1,16 @@
 <x-layouts.app>
+
+
+
+
+    <script
+      src="https://kit.fontawesome.com/2828f7885a.js"
+      integrity="sha384-WAsFbnLEQcpCk8lM1UTWesAf5rGTCvb2Y+8LvyjAAcxK1c3s5c0L+SYOgxvc6PWG"
+      crossorigin="anonymous"
+    ></script>
+
+
+
     <section class="hero  is-fullheight">
         <div class="hero-head">
             <x-navbar />
@@ -69,5 +81,179 @@
             </div>
         </section>
     </div>
+
+
+
+
+
+
+
+
+
+
+        {{-- <!-- Begin Services Content -->
+        <div class="section-color services" id="services">
+          <div class="container">
+            <div class="columns is-multiline">
+              <div
+                class="column is-12 about-me"
+                data-aos="fade-in"
+                data-aos-easing="linear"
+              >
+                <h1 class="title has-text-centered section-title">Services</h1>
+
+                <h2 class="subtitle">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                  eiusmod tempor incididunt ut labore et dolore magna aliqua
+                </h2>
+                <br />
+              </div>
+              <div class="columns is-12">
+                <div
+                  class="column is-4 has-text-centered"
+                  data-aos="fade-in"
+                  data-aos-easing="linear"
+                >
+                  <i class="fad fa-meteor fa-3x"></i>
+                  <hr />
+                  <h2>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  </h2>
+                </div>
+                <div
+                  class="column is-4 has-text-centered"
+                  data-aos="fade-in"
+                  data-aos-easing="linear"
+                >
+                  <i class="fas fa-paint-brush fa-3x"></i>
+                  <hr />
+                  <h2>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  </h2>
+                </div>
+                <div
+                  class="column is-4 has-text-centered"
+                  data-aos="fade-in"
+                  data-aos-easing="linear"
+                >
+                  <i class="fas fa-rocket fa-3x"></i>
+                  <hr />
+                  <h2>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  </h2>
+                </div>
+              </div>
+              <hr />
+              <div class="columns is-12">
+                <div
+                  class="column is-4 has-text-centered"
+                  data-aos="fade-in"
+                  data-aos-easing="linear"
+                >
+                  <i class="fas fa-upload fa-3x"></i>
+                  <hr />
+                  <h2>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  </h2>
+                </div>
+                <div
+                  class="column is-4 has-text-centered"
+                  data-aos="fade-in"
+                  data-aos-easing="linear"
+                >
+                  <i class="fas fa-bus fa-3x"></i>
+                  <hr />
+                  <h2>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  </h2>
+                </div>
+                <div
+                  class="column is-4 has-text-centered"
+                  data-aos="fade-in"
+                  data-aos-easing="linear"
+                >
+                  <i class="fas fa-code fa-3x"></i>
+                  <hr />
+                  <h2>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> --}}
+        <!-- End Services Content -->
+        <section class="hero is-fullheight is-dark pt-6" style="margin:-2%">
+            <!-- Begin Main Content -->
+            <div class="main-content">
+              <!-- Begin About Me Section -->
+              <div class="section-light about-me" id="about-me">
+                <div class="container">
+                  <div class="column is-12 about-me">
+                    <h1 class="is-family-ciro has-text-centered  has-text-warning" style="font-size: 70px">About Ue</h1><br>
+                  </div>
+                  <div class="columns is-multiline">
+                    <div
+                      class="column is-6 has-vertically-aligned-content"
+                      data-aos="fade-right"
+                    >
+                      <p class="is-larger pt-6">
+                        &emsp;&emsp;<strong
+                          >Showcase is a modern, beautiful personal website template to
+                          showcase who you are, as well as projects you've worked on in
+                          the past.</strong
+                        >
+                      </p>
+                      <br />
+                      <p class="pt-6">
+                        Showcase was built from the ground up with Bulma to be fast and
+                        responsive out of the box with all source files well documented
+                        for easy to customization. The Showcase template gives you a
+                        personal space to share what you are all about as a creative
+                        designer, developer, photographer, and more!
+                      </p>
+                      <br />
+                      <div class="is-divider"></div>
+                      <div class="columns about-links">
+                        <div class="column">
+                        </div>
+                        <div class="column">
+                        </div>
+                        <div class="column">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="column is-6 right-image " data-aos="fade-left">
+                      <img
+                      style=" height: 100%; width:100%;
+                        position: absolute;
+                          top: 22%;
+                          left: 10%;
+                      "
+                        src="{{ asset('/images/about_us_image.jpg') }}"
+                        alt="about us image"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </section>
+          <!-- End About Me Content -->
+           <!-- Scripts -->
+
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        easing: "ease-out",
+        duration: 800,
+      });
+    </script>
 
 </x-layouts.app>
