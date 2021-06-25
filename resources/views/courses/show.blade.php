@@ -27,24 +27,40 @@
                         </h1>
                         <div class="columns is-gapless">
                             <div class="mx-2 pr-4" style="border-right: 2px solid yellow">
-                                hours here
+                                {{ $course->hours }} hours
                             </div>
                             <div class="mx-2 pr-4" style="border-right: 2px solid yellow">
                                 tag here
                             </div>
                             <div class="mx-2 pr-4" style="border-right: 2px solid yellow">
-                                category here
+                                {{ $course->category->name }}
                             </div>
                             <div class="mx-2 pr-6"  style="border-right: 2px solid yellow">
-                                price here
+                                <p>{{ $course->price }} $</p>
                             </div>
                             <div class="max-2">
                                 <div class="star_icon pl-1 ">
+                                    @if ( $course->rate === 1 )
+                                        <i class="mdi mdi-star"></i>
+                                    @elseif( $course->rate === 2 )
+                                        <i class="mdi mdi-star"></i>
+                                        <i class="mdi mdi-star"></i>
+                                    @elseif( $course->rate === 3 )
+                                        <i class="mdi mdi-star"></i>
+                                        <i class="mdi mdi-star"></i>
+                                        <i class="mdi mdi-star"></i>
+                                    @elseif( $course->rate === 4 )
+                                        <i class="mdi mdi-star"></i>
+                                        <i class="mdi mdi-star"></i>
+                                        <i class="mdi mdi-star"></i>
+                                        <i class="mdi mdi-star"></i>
+                                    @else
                                     <i class="mdi mdi-star"></i>
                                     <i class="mdi mdi-star"></i>
                                     <i class="mdi mdi-star"></i>
                                     <i class="mdi mdi-star"></i>
                                     <i class="mdi mdi-star"></i>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -126,7 +142,7 @@
 
                   <div class="tutor has-text-centered" style="padding: 2em; border: 2px solid black; border-radius:10px; position: relative; width: 80%">
                       <img src="{{ $course->teacher_img }}" alt="hi" style="width: 160px; height:160px; border-radius: 50%; position: absolute; top: 0%; left: 50%; border: none; transform: translate(-50%, -50%)">
-                      <h2 style="padding-top: 30%; font-size: 30px; font-weight: bold">Teacher Name</h2>
+                      <h2 style="padding-top: 30%; font-size: 30px; font-weight: bold">{{ $course->teacher_name }}</h2>
                       <p style="padding-top: 5%">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum a vitae ipsa eos, nam id velit porro dicta iusto provident.</p>
                       <div class="social pt-6">
                         <i class="mdi mdi-facebook" style="font-size: 30px"></i>

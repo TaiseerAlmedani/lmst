@@ -44,7 +44,7 @@
         </div>
     </section>
 
-    <div class="container ml-3 mr-3">
+    <div class="container ">
         <section class="section">
             <h1 class="title has-text-centered">Courses</h1>
             <div class="columns">
@@ -60,7 +60,7 @@
                             <div class="card-content  modal-button" data-target="modal-card2">
                                 <div class="content">
                                     <h4>{{ $course->slug }}</h4>
-                                    <p>{{ $course->description }}</p>
+                                    <p>{{ Str::limit($course->description , 50, '...')}}</p>
                                     <a href="{{ route('course.show', $course) }}">
                                         <span class="button is-link modal-button is-fullwidth">View</span>
                                     </a>

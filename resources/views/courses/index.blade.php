@@ -35,8 +35,33 @@
                                 </div>
                                 <div class="card-content  modal-button" data-target="modal-card2">
                                     <div class="content">
-                                        <h4>{{ $course->slug }}</h4>
-                                        <p>{{ $course->description }}</p>
+                                        <h4>{{ Str::limit($course->slug , 20, '...')}}</h4>
+                                        <p>{{ Str::limit($course->description , 50, '...')}}</p>
+                                        <div class="max-2">
+                                            <div class="star_icon pl-1 ">
+                                                @if ( $course->rate === 1 )
+                                                    <i class="mdi mdi-star"></i>
+                                                @elseif( $course->rate === 2 )
+                                                    <i class="mdi mdi-star"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                @elseif( $course->rate === 3 )
+                                                    <i class="mdi mdi-star"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                @elseif( $course->rate === 4 )
+                                                    <i class="mdi mdi-star"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                @else
+                                                <i class="mdi mdi-star"></i>
+                                                <i class="mdi mdi-star"></i>
+                                                <i class="mdi mdi-star"></i>
+                                                <i class="mdi mdi-star"></i>
+                                                <i class="mdi mdi-star"></i>
+                                                @endif
+                                            </div>
+                                        </div>
                                         <a href="{{ route('course.show', $course) }}">
                                             <span class="button is-link modal-button is-fullwidth">View</span>
                                         </a>

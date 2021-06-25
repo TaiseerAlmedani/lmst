@@ -33,6 +33,19 @@
                             <span style="font-size:1.2rem">Courses</span>
                         </a>
                     </span>
+
+                    <span class="navbar-item">
+                        <a class="button  is-warning has-text-black is-outlined"
+                            href="{{ route('profile.index') }}" style="
+                        border: none;
+                        ">
+                            <span class="icon">
+                                <i class="mdi mdi-school"style="font-size: 1.5rem"></i>
+                            </span>
+                            <span style="font-size:1.2rem">My Profile</span>
+                        </a>
+                    </span>
+
                     <span class="navbar-item divclass">
                         <a class="button is-warning has-text-black is-outlined" href="{{ route('login') }}"
                             style="
