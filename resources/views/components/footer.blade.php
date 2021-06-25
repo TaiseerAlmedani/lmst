@@ -1,5 +1,109 @@
+</div>A<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bulma Simple footer</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700,800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style type="text/css">
+
+      h1{
+      margin-bottom: 55px !important;
+      color: #fff !important;
+      }
+      .content ul{
+      padding: 0;
+      margin: 0;
+      }
+      .content ul li{
+      list-style-type: none;
+      text-align: center;
+      padding: 5px;
+      }
+      .content ul li a{
+      color: #fff;
+      font-size: 18px;
+      }
+      .content ul li a:hover{
+      color: #ddd;
+      }
+      h6{
+      text-align: center;
+      color: #fff !important;
+      font-size: 30px !important;
+      margin-bottom: 25px !important;
+      }
+
+      .fa{
+      padding-right: 10px;
+      font-size: 24px;
+      cursor: pointer;
+      }
+      .control.has-icons-left .icon.is-left{
+      left: 5px;
+      }
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <footer class="footer has-background-dark">
+      <div class="content has-text-centered has-text-white">
+        <div class="div" style="border-bottom: 1px solid #FFDB4A"></div>
+        <h1><span style="color: #FFDB4A">A</span>lwase Here To Hel<span style="color: #FFDB4A">p</span></h1>
+        <div class="columns">
+          <div class="column">
+            <h6><span style="color: #FFDB4A">A</span>bout <span style="color: #FFDB4A">U</span>s</h6>
+            <p class="has-text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat.
+            </p>
+          </div>
+          <div class="column">
+            <h6><span style="color: #FFDB4A">C</span>ontact</h6>
+            <ul>
+
+
+               <div class="div m-3"><a href="http://mail.google.com/mail/"><i class="mdi fas fa-envelope-open-text" style="font-size: 1.4rem"></i></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://mail.google.com/mail/">Gmail</a><br></div>
+               <div class="div m-4"> <a href="http://facebook.com"> <i class="mdi fab fa-facebook-f" style="font-size: 1.4rem"></i> </a> &nbsp;&nbsp;&nbsp; <a href="http://facebook.com">Facebook</a> <br></div>
+                <div class="div"><a href="http://twitter.com"> <i class="mdi fab fa-twitter" style="font-size: 1.4rem"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="http://twitter.com">Twitter</a> <br></div>
+            </ul>
+          </div>
+          <div class="column">
+            <h6><span style="color: #FFDB4A">F</span>AQ</h6>
+            <ul>
+              <li><a href="http://lmst.test/course">Enroll a new course</a></li>
+              <li><a href="#">Get a course Certificate</a></li>
+              <li><a href="#">Change profile picture</a></li>
+              <li><a href="#">Payment methor</a></li>
+              <li><a href="http://mail.google.com/mail/"><span style="color: #FFDB4A">Somthing Else!</span> contact our support team</a></li>
+            </ul>
+          </div>
+          <div class="column">
+            <h6><span style="color: #FFDB4A">C</span>ubscribe</h6>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input is-medium" type="email" placeholder="Email">
+              <span class="icon is-left">
+              <i class="fa fa-envelope"></i>
+              </span>
+            </div>
+            <a class="button is-warning mt-5 is-rounded">Subscribe</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
+
+<div class="div colmuns" style="border-bottom: 1px solid #FFDB4A">
+</div>
 <style>
-    .footer {
+    .footer  {
                     background-color: #37424c;
                     color: #b2b9bf;
                     font-size: 16px;
@@ -22,7 +126,7 @@
                 }
                 .footer-widget .stats .line .caption {
                   color: #7b8690;
-                  margin-left: 56px;
+                  margin-left: 56px  ;
                   display: block;
                 }
 
@@ -75,73 +179,36 @@
                     outline: none;
                     box-shadow: none !important;
                 }
+                a{
+                    color: #ddd;
+                }
+                a:hover{
+                    color: #fc3;
+                }
 
     /*************Copyright Segment*************/
                 .cpyright-footer { /*shared with header */
-                    border-color: #363636;
-                    background-color: #363636;
+                    border-color: #333;
+                    background-color: #333;
                     color: #ccc;
                     font-size: 16px;
                     min-height: 63px;
-            text-align: center;
+            text-align: center !important;
 
                 }
                 .cpyright-footer p{
+                    position: absolute;
+                    left: 45%;
             padding-top: 20px;
           }
         </style>
       <footer>
-        {{-- <div class="footer">
-          <div class="tile is-ancestor">
-            <div class="tile is-parent">
-              <div class="tile is-child footer-widget">
-                <h3>Statistics</h3>
-                <div class="stats">
-                  <div class="line">
-                    <span class="counter">20</span>
-                    <span class="caption">Articles</span>
-                  </div>
-                  <div class="line">
-                    <span class="counter">208</span>
-                    <span class="caption">Comments</span>
-                  </div>
-                  <div class="line">
-                    <span class="counter">1</span>
-                    <span class="caption">Authors</span>
-                  </div>
-                </div>
-              </div>
-              <div class="tile is-parent footer-widget">
-                <div class="tile is-child">
-                  <h3> Recent Post</h3>
-                <ul class="recent-post">
-                  <li ><a href="#"><i class="fab fa-laravel">Laravel</i></a></li>
-                  <li><a href="#">MySql</a></li>
-                  <li><a href="#">Bulma</a></li>
-                </ul>
-                </div>
-              </div>
-              <div class="tile is-parent footer-widget">
-                <div class="tile is-child">
-                  <h3>Tags</h3>
-                <ul class="tags">
-                  <li><button class="btn btn-primary" type="button">Laravel</button></li>
-                  <li><button class="btn btn-primary" type="button">Database</button></li>
-                  <li><button class="btn btn-primary" type="button">HTML</button></li>
-                  <li><button class="btn btn-primary" type="button">CSS</button></li>
-                  <li><button class="btn btn-primary" type="button">Javascript</button></li>
-                  <li><button class="btn btn-primary" type="button">jQuery</button></li>
-                </ul>
-                </div>
 
-              </div>
-            </div>
-          </div>
-        </div> --}}
-        <div class="cpyright-footer ">
+        <div class="cpyright-footer has-text-centered">
 
-            <p class="social pull-left">Copyright &copy;  LMS 2021 </p>
+            <p class="social pull-left has-text-centered">Copyright &copy;  LMS 2021 </p>
 
         </div>
-      </footer>
+
+    </footer>
     <!-- End of Content -->
