@@ -6,19 +6,25 @@
         <div class="hero-body">
             <div class="container has-text-left">
                 <div class="columns mt-6">
-                    <div class="column is-4 ml-4 mt-12">
+                    <div class="column is-4  mt-12" style="margin-left: 100px; padding-left:4%; padding-top:-0%; ">
                         <h1 class="title has-text-weight-bold is-size-1 mb-0">
-                            SIRAJ
+                            <span style="font-size: 3.5rem">S</span>iraj
                         </h1>
-                        <h4 class="subtitle is-size-4 mb-4">
-                            A People Without Education Is Like<br>A Building Without A Foundation
+                        <h4 class="subtitle is-size-4 has-text-weight-medium mb-4">
+                            People Without Education Is Like<br> Building Without Foundation.
                         </h4>
+                        <img src="{{ asset('/images/header_left_imag.png') }}"  style="
+                        position: absolute;
+                        top: -15%;
+                        left: -3%;">
                         <div class="buttons">
-                            <button class="button is-warning is-large has-text-weight-light has-text-dark">PICK A
+                            <button class="button is-warning is-large has-text-weight-bold has-text-weight-light has-text-dark" style="position: absolute;
+                            top: 100%;
+                            left: 46%;">PICK A
                                 COURSE</button>
                         </div>
                     </div>
-                    <div class="column is-8" style="margin-top: -7%; margin-left: 5%">
+                    <div class="column is-8" style="margin-top: -8%; margin-left: 9%">
                         <img src="{{ asset('/images/header.png') }}" width="690">
                     </div>
                 </div>
