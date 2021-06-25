@@ -30,7 +30,7 @@
                         </a>
                     </span>
                     <span class="navbar-item">
-                        <a class="button is-warning has-text-black is-outlined" href="#">
+                        <a class="button is-warning has-text-black is-outlined" href="{{ route('login') }}">
                             <span class="icon">
                                 <i class="mdi mdi-book"></i>
                             </span>
@@ -38,7 +38,7 @@
                         </a>
                     </span>
                     <span class="navbar-item">
-                        <a class="button is-warning has-text-black is-outlined" href="#">
+                        <a class="button is-warning has-text-black is-outlined" href="{{ route('register') }}">
                             <span class="icon">
                                 <i class="mdi mdi-github"></i>
                             </span>
