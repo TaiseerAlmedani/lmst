@@ -12,9 +12,18 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+
+    }
+
+
     public function index()
     {
-        return view('profile.show');
+        // return view('profile.show');
     }
 
     /**
@@ -46,7 +55,7 @@ class ProfileController extends Controller
      */
     public function show(Profile $profile)
     {
-
+        return view('profile.show' ,['profile' => $profile]);
 
     }
 
