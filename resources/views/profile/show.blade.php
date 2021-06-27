@@ -19,12 +19,12 @@
                         </span> About
                     </a>
 
-                    <a class="nav-item is-tab is-active">
+                    {{-- <a class="nav-item is-tab is-active">
                         <span class="icon"><i class="fa fa-user"></i></span>
                     </a>
                     <a class="nav-item is-tab">
                         <span class="icon"><i class="fa fa-sign-out"></i></span>
-                    </a>
+                    </a> --}}
                 </div>
             </div>
         </nav>
