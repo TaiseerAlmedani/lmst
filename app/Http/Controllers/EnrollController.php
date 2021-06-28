@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
+use App\Models\Enroll;
 use Illuminate\Http\Request;
 
 class EnrollController extends Controller
@@ -34,7 +36,26 @@ class EnrollController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+
+        $request->validate([
+
+            'course_id' => 'required|numeric',
+            'user_id'   => 'numeric|required',
+        ]);
+
+
+        $enroll = Enroll::create([
+            'course_id' => $request->course_id,
+            'user_id' => $request->user_id,
+
+        ]);
+
+        return view('enroll.show');
+
+
+
+
     }
 
     /**

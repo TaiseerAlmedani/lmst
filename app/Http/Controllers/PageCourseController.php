@@ -66,7 +66,12 @@ class PageCourseController extends Controller
         // dd($course);
         $section = Section::all();
         $lessons = Lesson::all();
-        return view('courses.show' ,['course' => $course , 'section' => $section ,'lessons' => $lessons ]);
+        return view('courses.show' ,
+            ['course' => $course ,
+            'section' => $section ,
+            'lessons' => $lessons
+            ]
+        );
     }
 
     /**

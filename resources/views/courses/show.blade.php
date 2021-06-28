@@ -67,8 +67,17 @@
                         <h2 class="subtitle is-4 has-text-left" style="margin-top: -2%; margin-bottom: 5%">
                             {{ $course->description }}
                         </h2>
+
                         <div class="buttons pb-6">
-                            <div class="button is-warning has-text-dark is-large pr-6 pl-6"><a href="{{ route('enroll.show' , $course) }}">Enroll</a></div>
+                            <div class="button is-warning has-text-dark is-large pr-6 pl-6">
+                            <form action="{{ route('enroll.store' ) }}" method="POST">
+                                @csrf
+                                <input type="hidden" value="{{ $course->id }}" name="course_id">
+                                <input type="hidden" value="{{ Auth::user()->id }}" name="user_id">
+                                <button type="submit">Enroll</button>
+                            </form>
+                            </div>
+
                         </div>
                     </div>
                     <div class="column is-5 is-offset-1">
@@ -88,37 +97,37 @@
                     <div class="container">
                         <div class="card is-fullwidth">
                             <header class="card-header">
-                                <div class=" card-header-icon card-toggle" style="width: 100%">
-                                    <p class="card-header-title">Introduction</p>
-                                    <a class="card-header-icon card-toggle">
-                                        <i class="mdi mdi-arrow-down"></i>
-                                    </a>
+                                @foreach ($course->sections as $section)
 
-                                </div>
+                                    <div class=" card-header-icon card-toggle" style="width: 100%">
+                                        <p class="card-header-title">{{ $section->name }}</p>
+                                        <a class="card-header-icon card-toggle">
+                                            <i class="mdi mdi-arrow-down"></i>
+                                        </a>
+
+                                    </div>
                             </header>
                             <div class="card-content is-hidden">
                                 <div class="content pl-6">
                                     <div class="content_file">
 
-                                        <p>First Section</p>
-                                        @foreach ($course->sections as $section)
-                                            <p>{{ $section->name }}</p>
 
 
-                                            @foreach ($section->lessons as $Key => $lesson)
 
-                                                @if ($lesson->type == 'video')
-                                                    <i class="mdi mdi-play-circle"
-                                                        style="margin-top: 3px; font-size: 20px; display: inline"></i>
-                                                @elseif ($lesson->type == "pdf")
-                                                    <i class="mdi mdi-file"
-                                                        style="font-size: 20px; display: inline"></i>
-                                                @else
-                                                @endif
-                                                Lesson {{ ++$Key }} : {{ $lesson->name }} <br>
-                                                <hr>
-                                            @endforeach
-                                            @if ($loop->first) @break
+
+                                        @foreach ($section->lessons as $Key => $lesson)
+
+                                            @if ($lesson->type == 'video')
+                                                <i class="mdi mdi-play-circle"
+                                                    style="margin-top: 3px; font-size: 20px; display: inline"></i>
+                                            @elseif ($lesson->type == "pdf")
+                                                <i class="mdi mdi-file" style="font-size: 20px; display: inline"></i>
+                                            @else
+                                            @endif
+                                            Lesson {{ ++$Key }} : {{ $lesson->name }} <br>
+                                            <hr>
+                                        @endforeach
+                                        @if ($loop->first) @break
                                         @endif
                                         @endforeach
                                         {{-- <p>{{ $course->sections()->first()->name }}</p> --}}
@@ -136,51 +145,49 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="card is-fullwidth">
-                            <header class="card-header">
-                                <div class=" card-header-icon card-toggle" style="width: 100%">
-                                    <p class="card-header-title">Subject</p>
-                                    <a class="card-header-icon card-toggle">
-                                        <i class="mdi mdi-arrow-down"></i>
-                                    </a>
-                                </div>
-                            </header>
-                            <div class="card-content is-hidden">
-                                <div class="content">
-                                    <div class="content pl-6">
-                                        <div class="content_file">
-                                            <p>The rest of section</p>
-                                            @foreach ($course->sections as $section)
-                                                @if ($loop->first) @continue
-                                                @endif
-                                                {{ $section->name }}<br>
+                        @foreach ($course->sections as $section)
+                            @if ($loop->first) @continue
+                            @endif
+                            <div class="card is-fullwidth">
+                                <header class="card-header">
+                                    <div class=" card-header-icon card-toggle" style="width: 100%">
+                                        <p class="card-header-title">{{ $section->name }}<br></p>
+                                        <a class="card-header-icon card-toggle">
+                                            <i class="mdi mdi-arrow-down"></i>
+                                        </a>
+                                    </div>
+                                </header>
+                                <div class="card-content is-hidden">
+                                    <div class="content">
+                                        <div class="content pl-6">
+                                            <div class="content_file">
 
                                                 @foreach ($section->lessons as $lesson)
-                                                @if ($lesson->type == 'video')
+                                                    @if ($lesson->type == 'video')
+                                                        <i class="mdi mdi-play-circle"
+                                                            style="margin-top: 3px; font-size: 20px; display: inline"></i>
+                                                    @elseif ($lesson->type == "pdf")
+                                                        <i class="mdi mdi-file"
+                                                            style="font-size: 20px; display: inline"></i>
+                                                    @else
+                                                    @endif
+                                                    {{ $lesson->name }} <br>
+                                                @endforeach
+
+                                                {{-- <i class="mdi mdi-file" style="font-size: 20px; display: inline"></i>
+                                                <p style="display: inline">file</p>
+
+                                            </div>
+                                            <div class="content_file pt-4">
                                                 <i class="mdi mdi-play-circle"
                                                     style="margin-top: 3px; font-size: 20px; display: inline"></i>
-                                            @elseif ($lesson->type == "pdf")
-                                                <i class="mdi mdi-file"
-                                                    style="font-size: 20px; display: inline"></i>
-                                            @else
-                                            @endif
-                                                    Lesson : {{ $lesson->name }} <br>
-                                                @endforeach
-                                            @endforeach
-                                            <i class="mdi mdi-file" style="font-size: 20px; display: inline"></i>
-                                            <p style="display: inline">file</p>
-
-                                        </div>
-                                        <div class="content_file pt-4">
-                                            <i class="mdi mdi-play-circle"
-                                                style="margin-top: 3px; font-size: 20px; display: inline"></i>
-                                            <p style="display: inline">video</p>
+                                                <p style="display: inline">video</p>
+                                            </div> --}}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </section>
             </div>
