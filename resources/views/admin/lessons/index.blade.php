@@ -16,6 +16,7 @@
                             'ID',
                             ['label' => 'Lesson URL', 'width' => 10],
                             ['label' => 'Type' , 'width' => 15],
+                            ['label' => 'Section name' , 'width' => 15],
                             ['label' => 'Actions', 'no-export' => true]];
 
 
@@ -49,7 +50,15 @@
                                     <button class="btn btn-xs btn-default text-teal mx-1 shadow " title="Details">
                                         <i class="fa fa-lg fa-fw fa-eye"></i>
                                     </button></a>';
-                            $data[] = [$lesson->id, $lesson->name ,$lesson->type,  $btnEdit, $btnDelete, $btnDetails,];
+                            $data[] = [
+                                $lesson->id,
+                                $lesson->name ,
+                                $lesson->type,
+                                $lesson->section->name,
+                                $btnEdit,
+                                $btnDelete,
+                                $btnDetails,
+                            ];
                         }
 
                         $config = [

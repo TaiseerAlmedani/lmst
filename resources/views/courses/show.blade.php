@@ -35,12 +35,12 @@
                             <div class="mx-2 pr-4" style="border-right: 2px solid yellow">
                                 {{ $course->category->name }}
                             </div>
-                            <div class="mx-2 pr-6"  style="border-right: 2px solid yellow">
+                            <div class="mx-2 pr-6" style="border-right: 2px solid yellow">
                                 <p>{{ $course->price }} $</p>
                             </div>
                             <div class="max-2">
                                 <div class="star_icon pl-1 ">
-                                    @if ( $course->rate === 1 )
+                                    @if ($course->rate === 1)
                                         <i class="mdi mdi-star"></i>
                                     @elseif( $course->rate === 2 )
                                         <i class="mdi mdi-star"></i>
@@ -55,11 +55,11 @@
                                         <i class="mdi mdi-star"></i>
                                         <i class="mdi mdi-star"></i>
                                     @else
-                                    <i class="mdi mdi-star"></i>
-                                    <i class="mdi mdi-star"></i>
-                                    <i class="mdi mdi-star"></i>
-                                    <i class="mdi mdi-star"></i>
-                                    <i class="mdi mdi-star"></i>
+                                        <i class="mdi mdi-star"></i>
+                                        <i class="mdi mdi-star"></i>
+                                        <i class="mdi mdi-star"></i>
+                                        <i class="mdi mdi-star"></i>
+                                        <i class="mdi mdi-star"></i>
                                     @endif
                                 </div>
                             </div>
@@ -82,7 +82,7 @@
     </section>
     <section class="section">
         <div class="columns pt-6">
-            {{------------------- course details ----------------}}
+            {{-- ----------------- course details -------------- --}}
             <div class="column is-8">
                 <section class="section">
                     <div class="container">
@@ -99,13 +99,40 @@
                             <div class="card-content is-hidden">
                                 <div class="content pl-6">
                                     <div class="content_file">
-                                        <i class="mdi mdi-file" style="font-size: 20px; display: inline"></i>
-                                        <p style="display: inline">file</p>
+
+                                        <p>First Section</p>
+                                        @foreach ($course->sections as $section)
+                                            <p>{{ $section->name }}</p>
+
+
+                                            @foreach ($section->lessons as $Key => $lesson)
+
+                                                @if ($lesson->type == 'video')
+                                                    <i class="mdi mdi-play-circle"
+                                                        style="margin-top: 3px; font-size: 20px; display: inline"></i>
+                                                @elseif ($lesson->type == "pdf")
+                                                    <i class="mdi mdi-file"
+                                                        style="font-size: 20px; display: inline"></i>
+                                                @else
+                                                @endif
+                                                Lesson {{ ++$Key }} : {{ $lesson->name }} <br>
+                                                <hr>
+                                            @endforeach
+                                            @if ($loop->first) @break
+                                        @endif
+                                        @endforeach
+                                        {{-- <p>{{ $course->sections()->first()->name }}</p> --}}
+                                        {{-- <p>{{ $section->lessons()-first()->name }}</p> --}}
+                                        {{-- <i class="mdi mdi-file" style="font-size: 20px; display: inline"></i>
+                                        <p style="display: inline">file</p> --}}
+
                                     </div>
-                                    <div class="content_file pt-4">
-                                        <i class="mdi mdi-play-circle" style="margin-top: 3px; font-size: 20px; display: inline"></i>
+                                    {{-- <div class="content_file pt-4">
+                                        <i class="mdi mdi-play-circle"
+                                            style="margin-top: 3px; font-size: 20px; display: inline"></i>
                                         <p style="display: inline">video</p>
-                                    </div>
+
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -123,11 +150,31 @@
                                 <div class="content">
                                     <div class="content pl-6">
                                         <div class="content_file">
+                                            <p>The rest of section</p>
+                                            @foreach ($course->sections as $section)
+                                                @if ($loop->first) @continue
+                                                @endif
+                                                {{ $section->name }}<br>
+
+                                                @foreach ($section->lessons as $lesson)
+                                                @if ($lesson->type == 'video')
+                                                <i class="mdi mdi-play-circle"
+                                                    style="margin-top: 3px; font-size: 20px; display: inline"></i>
+                                            @elseif ($lesson->type == "pdf")
+                                                <i class="mdi mdi-file"
+                                                    style="font-size: 20px; display: inline"></i>
+                                            @else
+                                            @endif
+                                                    Lesson : {{ $lesson->name }} <br>
+                                                @endforeach
+                                            @endforeach
                                             <i class="mdi mdi-file" style="font-size: 20px; display: inline"></i>
                                             <p style="display: inline">file</p>
+
                                         </div>
                                         <div class="content_file pt-4">
-                                            <i class="mdi mdi-play-circle" style="margin-top: 3px; font-size: 20px; display: inline"></i>
+                                            <i class="mdi mdi-play-circle"
+                                                style="margin-top: 3px; font-size: 20px; display: inline"></i>
                                             <p style="display: inline">video</p>
                                         </div>
                                     </div>
@@ -137,33 +184,37 @@
                     </div>
                 </section>
             </div>
-            {{-------------- tutor card -------------------------  --}}
+
+            {{-- ------------ tutor card ------------------------- --}}
             <div class="column is-4">
 
-                  <div class="tutor has-text-centered" style="padding: 2em; border: 2px solid black; border-radius:10px; position: relative; width: 80%">
-                      <img src="{{ $course->teacher_img }}" alt="hi" style="width: 160px; height:160px; border-radius: 50%; position: absolute; top: 0%; left: 50%; border: none; transform: translate(-50%, -50%)">
-                      <h2 style="padding-top: 30%; font-size: 30px; font-weight: bold">{{ $course->teacher_name }}</h2>
-                      <p style="padding-top: 5%">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum a vitae ipsa eos, nam id velit porro dicta iusto provident.</p>
-                      <div class="social pt-6">
+                <div class="tutor has-text-centered"
+                    style="padding: 2em; border: 2px solid black; border-radius:10px; position: relative; width: 80%">
+                    <img src="{{ $course->teacher_img }}" alt="hi"
+                        style="width: 160px; height:160px; border-radius: 50%; position: absolute; top: 0%; left: 50%; border: none; transform: translate(-50%, -50%)">
+                    <h2 style="padding-top: 30%; font-size: 30px; font-weight: bold">{{ $course->teacher_name }}</h2>
+                    <p style="padding-top: 5%">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum a vitae
+                        ipsa eos, nam id velit porro dicta iusto provident.</p>
+                    <div class="social pt-6">
                         <i class="mdi mdi-facebook" style="font-size: 30px"></i>
                         <i class="mdi mdi-telegram" style="font-size: 30px"></i>
                         <i class="mdi mdi-twitter" style="font-size: 30px"></i>
                         <i class="mdi mdi-gmail" style="font-size: 30px"></i>
-                      </div>
-                  </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-	let cardToggles = document.getElementsByClassName('card-toggle');
-	for (let i = 0; i < cardToggles.length; i++) {
-		cardToggles[i].addEventListener('click', e => {
-			e.currentTarget.parentElement.parentElement.childNodes[3].classList.toggle('is-hidden');
-		});
-	}
-});
-</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let cardToggles = document.getElementsByClassName('card-toggle');
+            for (let i = 0; i < cardToggles.length; i++) {
+                cardToggles[i].addEventListener('click', e => {
+                    e.currentTarget.parentElement.parentElement.childNodes[3].classList.toggle('is-hidden');
+                });
+            }
+        });
+    </script>
 
 
 

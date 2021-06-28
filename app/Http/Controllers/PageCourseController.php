@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Course;
+use App\Models\Lesson;
+use App\Models\Section;
 use Illuminate\Http\Request;
 
 class PageCourseController extends Controller
@@ -62,7 +64,9 @@ class PageCourseController extends Controller
     public function show(Course $course)
     {
         // dd($course);
-        return view('courses.show' ,['course' => $course]);
+        $section = Section::all();
+        $lessons = Lesson::all();
+        return view('courses.show' ,['course' => $course , 'section' => $section ,'lessons' => $lessons ]);
     }
 
     /**
