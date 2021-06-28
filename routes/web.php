@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\LessonController;
 use App\Http\Controllers\Admin\SectionsController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\UserContoller;
+use App\Http\Controllers\EnrollController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageCourseController;
 use App\Http\Controllers\ProfileController;
@@ -76,6 +77,8 @@ Route::name('admin.')->prefix('admin')->group(function () {
 Route::resource('course',PageCourseController::class);
 
 Route::resource('profile',ProfileController::class);
+
+Route::resource('enroll',EnrollController::class);
 
 
 Route::get('/breeze', function () {

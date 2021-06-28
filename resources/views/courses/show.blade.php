@@ -68,7 +68,7 @@
                             {{ $course->description }}
                         </h2>
                         <div class="buttons pb-6">
-                            <div class="button is-warning has-text-dark is-large pr-6 pl-6">Enroll</div>
+                            <div class="button is-warning has-text-dark is-large pr-6 pl-6"><a href="{{ route('enroll.show' , $course) }}">Enroll</a></div>
                         </div>
                     </div>
                     <div class="column is-5 is-offset-1">
