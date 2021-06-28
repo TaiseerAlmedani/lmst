@@ -46,7 +46,60 @@
 
     <div class="container ">
         <section class="section">
-            <h1 class="title has-text-centered">Courses</h1>
+
+            <section class="hero is-small is-dark">
+                <div class="hero-body">
+                  <p class="title  has-text-centered">
+                    Most popular Courses
+                  </p>
+
+                </div>
+              </section>
+
+            <div class="columns">
+                @foreach ($courses as $course)
+                <div class="column is-4">
+                    <div class="card is-shady">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="{{ $course->course_img }}" alt="butterfly image" class="modal-button"
+                                        data-target="modal-image4">
+                                </figure>
+                            </div>
+                            <div class="card-content  modal-button" data-target="modal-card2">
+                                <div class="content">
+                                    <h4>{{ $course->slug }}</h4>
+                                    <p>{{ Str::limit($course->description , 50, '...')}}</p>
+                                    <a href="{{ route('course.show', $course) }}">
+                                        <span class="button is-link modal-button is-fullwidth">View</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+
+            </div>
+            <div class="columns">
+                {{-- <div class="column is-half is-offset-one-quarter">
+                    <a href="{{ route('course.index') }}">
+                        <button class="button is-medium is-link is-outlined is-fullwidth">See All</button>
+
+                    </a>
+                </div> --}}
+            </div>
+        </section>
+        <section class="section">
+            <section class="hero is-small is-dark">
+                <div class="hero-body">
+                  <p class="title  has-text-centered">
+                    Our Courses
+                  </p>
+
+                </div>
+              </section>
+
+
             <div class="columns">
                 @foreach ($courses as $course)
                     <div class="column is-4">
