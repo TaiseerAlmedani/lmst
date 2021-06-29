@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Models\CourseTag;
 use Illuminate\Http\Request;
 
-class UserContoller extends Controller
+class CourseTagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,8 @@ class UserContoller extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   $users = User::all();
-        return view('admin.users.index' , ['users' => $users]);
+    {
+        //
     }
 
     /**
@@ -25,8 +24,7 @@ class UserContoller extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
-
+        //
     }
 
     /**
@@ -43,10 +41,10 @@ class UserContoller extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\CourseTag  $courseTag
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(CourseTag $courseTag)
     {
         //
     }
@@ -54,22 +52,22 @@ class UserContoller extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\CourseTag  $courseTag
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(CourseTag $courseTag)
     {
-        return view('admin.users.edit');
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\CourseTag  $courseTag
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, CourseTag $courseTag)
     {
         //
     }
@@ -77,10 +75,10 @@ class UserContoller extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\CourseTag  $courseTag
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(CourseTag $courseTag)
     {
         //
     }

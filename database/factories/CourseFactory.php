@@ -31,7 +31,7 @@ class CourseFactory extends Factory
            'price' => rand(10,2000),
            'description' => $this->faker->text(100),
            'rate' => rand(0,5),
-           'category_id' => rand(1,20),
+           'category_id' => rand(1,15),
            'hours' => rand(1,40),
            'outline' => $this->faker->text(30),
         ];

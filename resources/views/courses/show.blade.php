@@ -30,7 +30,9 @@
                                 {{ $course->hours }} hours
                             </div>
                             <div class="mx-2 pr-4" style="border-right: 2px solid yellow">
-                                tag here
+                                @foreach ($course->tags as $tag)
+                                {{ $tag->name }}
+                                @endforeach
                             </div>
                             <div class="mx-2 pr-4" style="border-right: 2px solid yellow">
                                 {{ $course->category->name }}

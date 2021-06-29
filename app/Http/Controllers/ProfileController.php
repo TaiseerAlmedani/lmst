@@ -53,8 +53,10 @@ class ProfileController extends Controller
      * @param  \App\Models\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function show(Profile $profile)
+    public function show($id)
     {
+        $profile = Profile::findOrFail($id);
+
         return view('profile.show' ,['profile' => $profile]);
 
     }

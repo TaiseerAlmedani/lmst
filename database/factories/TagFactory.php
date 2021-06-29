@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Lesson;
+use App\Models\Tag;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class LessonFactory extends Factory
+class TagFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Lesson::class;
+    protected $model = Tag::class;
 
     /**
      * Define the model's default state.
@@ -21,13 +21,10 @@ class LessonFactory extends Factory
      */
     public function definition()
     {
-
-            $name = $this->faker->text(30);
+        $name = $this->faker->text(30);
         return [
             'name' => $name,
             'slug' => $name,
-            'type' => $this->faker->randomElement(['video','pdf']),
-            'section_id' => rand(1,50)
         ];
     }
 }

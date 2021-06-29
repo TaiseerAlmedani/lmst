@@ -70,7 +70,15 @@
                                 <div class="content">
                                     <h4>{{ $course->slug }}</h4>
                                     <p>{{ Str::limit($course->description , 50, '...')}}</p>
+
+
+                                            @foreach ($course->tags as $tag)
+                                            <p>TAg : {{ $tag->name }}</p>
+                                            @endforeach
+
                                     <a href="{{ route('course.show', $course) }}">
+
+
                                         <span class="button is-link modal-button is-fullwidth">View</span>
                                     </a>
                                 </div>

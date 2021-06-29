@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use App\Models\CourseTag;
 use Illuminate\Database\Seeder;
 
-class UserSeeder extends Seeder
+class CourseTagSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +14,6 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->times(50)->create();
+        CourseTag::factory()->times(50)->create();
     }
 }

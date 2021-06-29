@@ -26,7 +26,7 @@ class ProfileFactory extends Factory
         return [
             'name' => $name,
             'slug' => $name,
-            'picture' => $this->faker->text(50),
+            'picture' => 'https://i.pinimg.com/474x/38/1e/c0/381ec006034984c22f0db62451b10e67.jpg',
             'about' => $this->faker->text(100),
             'email' =>$name.'@gmail.com',
             'country' => $this->faker->text(30),
