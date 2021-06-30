@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class TagController extends Controller
@@ -13,8 +14,8 @@ class TagController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('admin.tags.index');
+    {   $tags = Tag::all();
+        return view('admin.tags.index', ['tags' => $tags]);
     }
 
     /**
@@ -36,8 +37,16 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|min:3|max:20',
+            'slug' => 'required|min:3|max:20',
+        ]);
+
+        $tag = Tag::create(['name' => $request->name, 'slug' => $request->slug]);
+        $tags = Tag::all();
+        return view("admin.tags.index" ,['tags' => $tags]);
     }
+
 
     /**
      * Display the specified resource.
@@ -56,9 +65,10 @@ class TagController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Tag $tag)
     {
-        //
+        return view('admin.tags.edit' , ['tag' => $tag]);
+
     }
 
     /**
@@ -68,9 +78,20 @@ class TagController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Tag $tag)
     {
-        //
+
+
+        $request->validate([
+            'name' => 'required|min:3|max:20',
+            'slug' => 'required|min:3|max:20',
+        ]);
+
+        $tag->update($request->all());
+        $tags = Tag::all();
+
+        return view("admin.tags.index" ,['tags' => $tags]);
+
     }
 
     /**
@@ -79,8 +100,13 @@ class TagController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Tag $tag)
     {
-        //
+        $tag->delete();
+
+        $tags = Tag::all();
+
+        return view("admin.tags.index" ,['tags' => $tags]);
+
     }
 }
