@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\Enroll;
 use Illuminate\Http\Request;
 
-class EnrollController extends Controller
+class EnrollConroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +16,11 @@ class EnrollController extends Controller
      */
     public function index()
     {
-        //
+        $enrolls = Enroll::all();
+        $courses = Course::with('users')->get();
+
+        return view('admin.enrolls.index',['enrolls' => $enrolls,'courses'=> $courses]);
+
     }
 
     /**
@@ -36,45 +41,7 @@ class EnrollController extends Controller
      */
     public function store(Request $request)
     {
-        // // dd($request->all());
-        // if ($request->course_id  and $request->user_id) {
-        //     return view('enroll.show');
-        // }
-        // else {
-        //     $request->validate([
-
-        //         'course_id' => 'required|numeric',
-        //         'user_id'   => 'numeric|required',
-        //     ]);
-
-
-        //     $enroll = Enroll::create([
-        //         'course_id' => $request->course_id,
-        //         'user_id' => $request->user_id,
-
-        //     ]);
-
-        //     return view('enroll.show');
-        // }
-
-
-        $request->validate([
-
-            'course_id' => 'required|numeric',
-            'user_id'   => 'numeric|required',
-        ]);
-
-
-        $enroll = Enroll::create([
-            'course_id' => $request->course_id,
-            'user_id' => $request->user_id,
-
-        ]);
-
-        return view('enroll.show');
-
-
-
+        //
     }
 
     /**
@@ -85,7 +52,7 @@ class EnrollController extends Controller
      */
     public function show($id)
     {
-        return view('enroll.show');
+        //
     }
 
     /**

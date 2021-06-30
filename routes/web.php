@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\admin\EnrollConroller;
 use App\Http\Controllers\Admin\LessonController;
 use App\Http\Controllers\Admin\SectionsController;
 use App\Http\Controllers\Admin\TagController;
@@ -65,7 +66,9 @@ Route::name('admin.')->prefix('admin')->group(function () {
 });
 
 
-
+Route::name('admin.')->prefix('admin')->group(function () {
+    Route::resource('enrolls', EnrollConroller::class);
+});
 
 
 Route::name('admin.')->prefix('admin')->group(function () {

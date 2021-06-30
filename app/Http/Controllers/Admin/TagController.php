@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Course;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,10 @@ class TagController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   $tags = Tag::all();
-        return view('admin.tags.index', ['tags' => $tags]);
+    {   $courses = Course::with('tags')->get();
+        $tags = Tag::all();
+
+        return view('admin.tags.index', ['courses' => $courses ,'tags' => $tags]);
     }
 
     /**

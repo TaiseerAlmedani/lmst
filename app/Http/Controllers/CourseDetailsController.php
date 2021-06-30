@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
-use App\Models\Enroll;
+use App\Models\CourseDetails;
+use App\Models\Lesson;
+use App\Models\Section;
 use Illuminate\Http\Request;
 
-class EnrollController extends Controller
+class CourseDetailsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,65 +38,37 @@ class EnrollController extends Controller
      */
     public function store(Request $request)
     {
-        // // dd($request->all());
-        // if ($request->course_id  and $request->user_id) {
-        //     return view('enroll.show');
-        // }
-        // else {
-        //     $request->validate([
-
-        //         'course_id' => 'required|numeric',
-        //         'user_id'   => 'numeric|required',
-        //     ]);
-
-
-        //     $enroll = Enroll::create([
-        //         'course_id' => $request->course_id,
-        //         'user_id' => $request->user_id,
-
-        //     ]);
-
-        //     return view('enroll.show');
-        // }
-
-
-        $request->validate([
-
-            'course_id' => 'required|numeric',
-            'user_id'   => 'numeric|required',
-        ]);
-
-
-        $enroll = Enroll::create([
-            'course_id' => $request->course_id,
-            'user_id' => $request->user_id,
-
-        ]);
-
-        return view('enroll.show');
-
-
-
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\CourseDetails  $courseDetails
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Course $courseDetails)
     {
-        return view('enroll.show');
+
+
+        $section = Section::all();
+        $lessons = Lesson::all();
+
+        return view('courses.show' ,
+            ['course' => $courseDetails ,
+            'section' => $section ,
+            'lessons' => $lessons
+            ]
+        );
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\CourseDetails  $courseDetails
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(CourseDetails $courseDetails)
     {
         //
     }
@@ -103,10 +77,10 @@ class EnrollController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\CourseDetails  $courseDetails
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, CourseDetails $courseDetails)
     {
         //
     }
@@ -114,10 +88,10 @@ class EnrollController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\CourseDetails  $courseDetails
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(CourseDetails $courseDetails)
     {
         //
     }

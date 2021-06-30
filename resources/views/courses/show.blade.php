@@ -80,7 +80,17 @@
                             </form>
                             </div>
 
+                            {{-- <div class="button is-warning has-text-dark is-large pr-6 pl-6">
+                                <form action="{{ route('enroll.store' ) }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" value="{{ $course->id }}" name="course_id">
+                                    <input type="hidden" value="{{ Auth::user()->id }}" name="user_id">
+                                    <button type="submit">Explore Course</button>
+                                </form>
+                                </div> --}}
+
                         </div>
+
                     </div>
                     <div class="column is-5 is-offset-1">
                         <figure class="image is-4by3">
@@ -106,7 +116,6 @@
                                         <a class="card-header-icon card-toggle">
                                             <i class="mdi mdi-arrow-down"></i>
                                         </a>
-
                                     </div>
                             </header>
                             <div class="card-content is-hidden">
