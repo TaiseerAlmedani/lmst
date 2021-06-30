@@ -3,7 +3,7 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1 class="m-0 ">All Tags</h1>
+    <h3 class="has-text-centered is-family-code ">All Enroll</h3>
 @stop
 
 @section('content')
@@ -12,16 +12,20 @@
             <div class="card">
                 <div class="card-body">
                     @php
-                        $heads = [
+                        $heads =
+                        [
                             'ID',
-                            ['label' => 'Tag Name', 'width' => 30],
-                            ['label' => 'Actions', 'no-export' => true]];
+                            'Course',
+                            ['label' => 'User', 'width' => 20],
 
+                            ['label' => 'Actions', 'no-export' => true, 'width' => 5]
+                        ];
                         $data = [];
-                        foreach ($tags as $tag) {
+                        foreach ($courses as $course) {
+
                             $btnEdit =
                                 '<a href=" ' .
-                                    route('admin.tags.edit', $tag) .
+                                    route('admin.enrolls.edit', $course) .
                                 '">
                                     <button class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit">
                                       <i class="fa fa-lg fa-fw fa-pen"></i>
@@ -30,7 +34,7 @@
                             $btnDelete =
                                 '<div>
                                     <form action=" ' .
-                                         route('admin.tags.destroy' , $tag) .
+                                         route('admin.enrolls.destroy' , $course) .
                                         ' " method="POST">
                                         <input type="hidden" name="_token" value="' . csrf_token() .'">
                                         <input type="hidden" name="_method" value="DELETE">
@@ -41,23 +45,28 @@
                                 </div>';
                             $btnDetails =
                                 '<a href="' .
-                                route('admin.tags.show', $tag) .
+                                route('admin.enrolls.show', $course) .
                                 '">
                                     <button class="btn btn-xs btn-default text-teal mx-1 shadow ml-0 pl-0" title="Details">
                                         <i class="fa fa-lg fa-fw fa-eye"></i>
                                     </button></a>';
-                            $data[] = [
-                                $tag->id,
-                                $tag->name,
-                                $btnEdit, $btnDelete,
-                                $btnDetails,
-                            ];
-                        }
+                        $data[] =
+                        [
+                            // $course->id,
+                            // $courses->users->name,
+                            $course->users->name,
+                            $enroll->user_id,
+                            $btnEdit, $btnDelete,
+                            $btnDetails,
+                            '</nobr>'
+                        ];
+                                                                                                                                                                                }
                         $config = [
                             'data' => $data,
                             'order' => [[1, 'asc']],
                             'columns' => [null, null, null, ['orderable' => false]],
                         ];
+
                     @endphp
 
                     {{-- Minimal example / fill data using the component slot --}}
@@ -66,7 +75,6 @@
                             <tr>
                                 @foreach ($row as $cell)
                                     <td>{!! $cell !!}</td>
-
                                 @endforeach
                             </tr>
                         @endforeach
@@ -75,12 +83,8 @@
             </div>
         </div>
     </div>
-    @foreach ($courses as $Key => $course )
-        Lesson {{ ++$Key }} : {{ $course->name }}
-        <br>
-        @foreach ($course->tags as $tag)
-           AAAAAAAAA : {{ $tag->name }}
-           <br>
-        @endforeach
-    @endforeach
+    {{-- @foreach($courses as $course)
+            {{$course->name}}  {{$course->users->first()->name}}
+
+@endforeach --}}
 @stop

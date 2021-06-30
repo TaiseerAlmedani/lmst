@@ -36,7 +36,27 @@ class EnrollController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
+        // // dd($request->all());
+        // if ($request->course_id  and $request->user_id) {
+        //     return view('enroll.show');
+        // }
+        // else {
+        //     $request->validate([
+
+        //         'course_id' => 'required|numeric',
+        //         'user_id'   => 'numeric|required',
+        //     ]);
+
+
+        //     $enroll = Enroll::create([
+        //         'course_id' => $request->course_id,
+        //         'user_id' => $request->user_id,
+
+        //     ]);
+
+        //     return view('enroll.show');
+        // }
+
 
         $request->validate([
 
@@ -52,7 +72,6 @@ class EnrollController extends Controller
         ]);
 
         return view('enroll.show');
-
 
 
 

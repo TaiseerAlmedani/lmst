@@ -313,6 +313,21 @@ return [
             ],
         ],
         [
+            'text'    => 'Enrolls',
+            'icon'    => 'fas fa-fw fa-lock',
+            'submenu' => [
+                [
+                    'text' => 'Browse',
+                    'url'  => 'admin/enrolls',
+                ],
+                // [
+                //     'text'    => 'Add new Category',
+                //     'url'     => 'admin/categories/create',
+                //         ],
+
+            ],
+        ],
+        [
             'text'    => 'Categories',
             'icon'    => 'fas fa-fw fa-lock',
             'submenu' => [

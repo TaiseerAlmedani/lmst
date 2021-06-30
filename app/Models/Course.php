@@ -27,6 +27,13 @@ class Course extends Model
         return $this->belongsToMany(Tag::class);
     }
 
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
+
     public function getRouteKeyName()
     {
         return 'slug';

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Course;
-use App\Models\Tag;
+use App\Models\Enroll;
 use Illuminate\Http\Request;
 
-class TagController extends Controller
+class EnrollConroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,12 @@ class TagController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   $courses = Course::with('tags')->get();
-        $tags = Tag::all();
+    {
+        $enrolls = Enroll::all();
+        $courses = Course::with('users')->get();
 
-        return view('admin.tags.index', ['courses' => $courses ,'tags' => $tags]);
+        return view('admin.enrolls.index',['enrolls' => $enrolls,'courses'=> $courses]);
+
     }
 
     /**
@@ -28,8 +30,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        return view('admin.tags.create');
-
+        //
     }
 
     /**
@@ -40,16 +41,8 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|min:3|max:20',
-            'slug' => 'required|min:3|max:20',
-        ]);
-
-        $tag = Tag::create(['name' => $request->name, 'slug' => $request->slug]);
-        $tags = Tag::all();
-        return view("admin.tags.index" ,['tags' => $tags]);
+        //
     }
-
 
     /**
      * Display the specified resource.
@@ -68,10 +61,9 @@ class TagController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tag $tag)
+    public function edit($id)
     {
-        return view('admin.tags.edit' , ['tag' => $tag]);
-
+        //
     }
 
     /**
@@ -81,20 +73,9 @@ class TagController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tag $tag)
+    public function update(Request $request, $id)
     {
-
-
-        $request->validate([
-            'name' => 'required|min:3|max:20',
-            'slug' => 'required|min:3|max:20',
-        ]);
-
-        $tag->update($request->all());
-        $tags = Tag::all();
-
-        return view("admin.tags.index" ,['tags' => $tags]);
-
+        //
     }
 
     /**
@@ -103,13 +84,8 @@ class TagController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tag $tag)
+    public function destroy($id)
     {
-        $tag->delete();
-
-        $tags = Tag::all();
-
-        return view("admin.tags.index" ,['tags' => $tags]);
-
+        //
     }
 }
