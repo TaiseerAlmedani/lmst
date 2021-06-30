@@ -1,4 +1,4 @@
-</div>A<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>Bulma Simple footer</title>
