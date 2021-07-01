@@ -19,7 +19,7 @@
                     <aside class="menu is-hidden-mobile">
                         <br />
                         <p class="menu-label">
-                            Course Sections
+
                         </p>
                         <ul class="menu-list">
                             <li>
@@ -35,34 +35,38 @@
                                             <a href="#">
                                                 icone here
                                                 ايقونة حسب نوع الملف Content goes here <small>Small text</small>
+                            @foreach ($course->sections as $section)
+
+                                <li>
+                                    <div class="card is-fullwidth">
+                                        <header class="card-header">
+                                            <p class="card-header-title">{{ $section->name }}</p>
+                                            <a class="card-header-icon card-toggle">
+                                                <i class="fa fa-angle-down"></i>
                                             </a>
+                                        </header>
+                               @foreach ($section->lessons as  $lesson)
+
+                                        <div class="card-content is-hidden">
+                                            <div class="content">
+                                                <a href="#">
+                                                    @if ($lesson->type == 'video')
+                                                <i class="mdi mdi-play-circle"
+                                                    style="margin-top: 3px; font-size: 20px; display: inline"></i>
+                                            @elseif ($lesson->type == "pdf")
+                                                <i class="mdi mdi-file" style="font-size: 20px; display: inline"></i>
+                                            @else
+                                            @endif
+                                             {{ $lesson->name }} <br>
+                                                </a>
+                                            </div>
                                         </div>
+                                        @endforeach
                                     </div>
-                                </div>
-                            </li>
-                            <li>
+                                </li>
 
-                                <div class="card is-fullwidth">
-                                    <header class="card-header">
-                                        <p class="card-header-title">section #2</p>
-                                        <a class="card-header-icon card-toggle">
-                                            <i class="fa fa-angle-down"></i>
-                                        </a>
-                                    </header>
-                                    <div class="card-content is-hidden">
-                                        <div class="content"><a href="#">
-
-                                            Some more content. Look at all this whitespace. <small>(Unless you are on
-                                                mobile)</small>
-                                        </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-
+                                @endforeach
                         </ul>
-
-
                     </aside>
                 </div>
                 <div class="column is-2" hidden></div>

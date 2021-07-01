@@ -72,23 +72,13 @@
 
                         <div class="buttons pb-6">
                             <div class="button is-warning has-text-dark is-large pr-6 pl-6">
-                            <form action="{{ route('enroll.store' ) }}" method="POST">
+                            <form action="{{ route('course_user.store' ) }}" method="POST">
                                 @csrf
                                 <input type="hidden" value="{{ $course->id }}" name="course_id">
                                 <input type="hidden" value="{{ Auth::user()->id }}" name="user_id">
                                 <button type="submit">Enroll</button>
                             </form>
                             </div>
-
-                            {{-- <div class="button is-warning has-text-dark is-large pr-6 pl-6">
-                                <form action="{{ route('enroll.store' ) }}" method="POST">
-                                    @csrf
-                                    <input type="hidden" value="{{ $course->id }}" name="course_id">
-                                    <input type="hidden" value="{{ Auth::user()->id }}" name="user_id">
-                                    <button type="submit">Explore Course</button>
-                                </form>
-                                </div> --}}
-
                         </div>
 
                     </div>
@@ -121,11 +111,6 @@
                             <div class="card-content is-hidden">
                                 <div class="content pl-6">
                                     <div class="content_file">
-
-
-
-
-
                                         @foreach ($section->lessons as $Key => $lesson)
 
                                             @if ($lesson->type == 'video')

@@ -2,15 +2,19 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CourseController;
-use App\Http\Controllers\admin\EnrollConroller;
+use App\Http\Controllers\Admin\CourseUsereController;
 use App\Http\Controllers\Admin\LessonController;
 use App\Http\Controllers\Admin\SectionsController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\UserContoller;
-use App\Http\Controllers\EnrollController;
+use App\Http\Controllers\CourseDetailsController;
+use App\Http\Controllers\CourseInfoController;
+use App\Http\Controllers\CourseUserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageCourseController;
 use App\Http\Controllers\ProfileController;
+use App\Models\CourseDetails;
+use App\Models\courseUser;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -67,7 +71,7 @@ Route::name('admin.')->prefix('admin')->group(function () {
 
 
 Route::name('admin.')->prefix('admin')->group(function () {
-    Route::resource('enrolls', EnrollConroller::class);
+    Route::resource('course_user', CourseUsereController::class);
 });
 
 
@@ -77,11 +81,20 @@ Route::name('admin.')->prefix('admin')->group(function () {
 
 
 
-Route::resource('course',PageCourseController::class);
+
+
+
+Route::resource('curse_info',CourseInfoController::class);
+
 
 Route::resource('profile',ProfileController::class);
 
-Route::resource('enroll',EnrollController::class);
+Route::resource('course_user',CourseUserController::class);
+
+Route::resource('course',PageCourseController::class);
+
+Route::resource('course_details',CourseDetailsController::class);
+
 
 
 Route::get('/breeze', function () {
