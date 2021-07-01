@@ -1,10 +1,44 @@
+<style>
+    input, textarea{
+        border: 1px solid gray !important;
+    }
+</style>
 <x-layouts.app>
     <x-navbar />
- Enroll page
-    <section class="section">
-        <form action="">
+
+    <section class="section p-0">
+        <div class="notification is-dark is-max-widescreen" style="width: 100%">
+            <h1 class="has-text-centered is-size-3"><span class="has-text-warning">E</span>nroll <span
+                    class="has-text-warning">T</span>he <span class="has-text-warning">C</span>ourse</h1>
             <div class="columns">
-                <div class="column is-4">
+                <div class="column is-6">
+                    <ol>
+                        <li>transfare the course salary to this account</li>
+                        <li>fill your information</li>
+                        <li>attache a photo for the recied</li>
+                        <li>submite the info</li>
+                    </ol>
+                    <h4>after the submait you will recive a confirem email ,and the re fresh the page to enroll
+                        the course , it take max 2 houres after you sent the info</h4>
+                    <br>
+                    <hr>
+
+                    <button class="button ml-6 is-large is-warning is-hovered">
+                        <span class="icon is-small">
+                            <i class="fa fa-refresh"></i>
+                        </span>
+                        <span>All set! Refresh Pag</span>
+                    </button>
+                </div>
+                <div class="column is-6">
+                    <img src="{{ asset('/images/how.svg') }}" alt="" width="100%" height="100%">
+                </div>
+            </div>
+        </div>
+        <form action="" style="padding: 5em;">
+            <div class="columns">
+                <div class="column is-12">
+                    <h1 class="has-text-dark has-text-weight-bold has-text-centered" style="font-size: 50px;">Enroll Form</h1>
                     <div class="columns">
                         <div class="column is-6">
                             <div class="field">
@@ -94,41 +128,19 @@
 
                     <div class="field is-grouped">
                         <div class="control">
-                            <button type="submit" class="button is-dark"><span class="has-text-warning">S</span>ubmit</button>
+                            <button type="submit" class="button is-dark"><span
+                                    class="has-text-warning">S</span>ubmit</button>
                         </div>
                         <div class="control">
-                            <button type="reset" value="reset" class="button is-dark is-light"><span class="has-text-warning">C</span>ancel</button>
+                            <button type="reset" value="reset" class="button is-dark is-light"><span
+                                    class="has-text-warning">C</span>ancel</button>
                         </div>
                     </div>
                 </div>
 
 
-                        <div class="notification is-dark is-max-widescreen" style="width: 100%">
-                            <h1 class="has-text-centered is-size-3"><span class="has-text-warning">E</span>nroll <span class="has-text-warning">T</span>he <span class="has-text-warning">C</span>ourse</h1>
-                        <div class="columns">
-                            <div class="column is-6">
-                        <ol>
-                            <li>transfare the course salary to this account</li>
-                            <li>fill your information</li>
-                            <li>attache a photo for the recied</li>
-                            <li>submite the info</li>
-                        </ol>
-                        <h4>after the submait you will recive a confirem email ,and the re fresh the page to enroll the course , it take max 2 houres after you sent the info</h4>
-                        <br><hr>
-
-                        <button class="button ml-6 is-large is-warning is-hovered" >
-                            <span class="icon is-small">
-                              <i class="fa fa-refresh"></i>
-                            </span>
-                            <span>All set! Refresh Pag</span>
-                          </button>
-                    </div>
-                <div class="column is-6">
-                    <img src="{{ asset('/images/how.svg') }}" alt="" width="100%" height="100%">
-                </div>
             </div>
-                    </div>
-                </div>
+
 
 
         </form>

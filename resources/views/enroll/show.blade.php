@@ -22,7 +22,6 @@
                             Course Sections
                         </p>
                         <ul class="menu-list">
-
                             <li>
                                 <div class="card is-fullwidth">
                                     <header class="card-header">
@@ -77,7 +76,7 @@
 
 
                             </div>
-                            <video id="video" width="770" height="882" onclick="play();">
+                            <video id="video" width="770" height="882" controls onclick="play();">
                                 <source src="{{ asset('/Video/essam.mp4') }}" type="video/mp4" />
                             </video>
 
