@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\CourseDetails;
 use App\Models\Lesson;
 use App\Models\Section;
 use Illuminate\Http\Request;
 
-class CourseDetailsController extends Controller
+class CourseInfoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -43,32 +44,31 @@ class CourseDetailsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\CourseDetails  $courseDetails
      * @return \Illuminate\Http\Response
      */
-    public function show(Course $course_detail)
+    public function show(Course $courseDetails)
     {
-        // dd($course_detail);
 
         $section = Section::all();
         $lessons = Lesson::all();
-        return view('enroll.show' ,
+
+        return view('courses.show' ,
             [
-                'course' => $course_detail ,
+                'course' => $courseDetails ,
                 'section' => $section ,
-                'lessons' => $lessons
+                'lessons' => $lessons,
             ]
         );
     }
 
-
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\CourseDetails  $courseDetails
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(CourseDetails $courseDetails)
     {
         //
     }
@@ -77,10 +77,10 @@ class CourseDetailsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\CourseDetails  $courseDetails
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, CourseDetails $courseDetails)
     {
         //
     }
@@ -88,10 +88,10 @@ class CourseDetailsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\CourseDetails  $courseDetails
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(CourseDetails $courseDetails)
     {
         //
     }

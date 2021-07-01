@@ -318,7 +318,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Browse',
-                    'url'  => 'admin/enrolls',
+                    'url'  => 'admin/course_user',
                 ],
                 // [
                 //     'text'    => 'Add new Category',

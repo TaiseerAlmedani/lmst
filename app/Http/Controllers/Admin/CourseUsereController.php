@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Course;
-use App\Models\Lesson;
-use App\Models\Section;
+use App\Models\CourseUser;
 use Illuminate\Http\Request;
 
-class CourseDetailsController extends Controller
+class CourseUsereController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,11 @@ class CourseDetailsController extends Controller
      */
     public function index()
     {
-        //
+
+        $courses = Course::whereHas('users')->get();
+
+        return view('admin.enrolls.index',['courses' => $courses]);
+
     }
 
     /**
@@ -46,21 +50,10 @@ class CourseDetailsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Course $course_detail)
+    public function show($id)
     {
-        // dd($course_detail);
-
-        $section = Section::all();
-        $lessons = Lesson::all();
-        return view('enroll.show' ,
-            [
-                'course' => $course_detail ,
-                'section' => $section ,
-                'lessons' => $lessons
-            ]
-        );
+        //
     }
-
 
     /**
      * Show the form for editing the specified resource.

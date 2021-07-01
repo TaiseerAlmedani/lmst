@@ -5,10 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CourseTag extends Model
+class CourseUser extends Model
 {
-    protected $fillable = ['course_id','user_id'];
-
-
+    protected $fillable  = ['user_id','course_id'];
     use HasFactory;
 }
