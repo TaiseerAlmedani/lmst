@@ -19,11 +19,9 @@
                     <aside class="menu is-hidden-mobile">
                         <br />
                         <p class="menu-label">
-
                         </p>
                         <ul class="menu-list">
                             @foreach ($course->sections as $section)
-
                                 <li>
                                     <div class="card is-fullwidth">
                                         <header class="card-header">
@@ -33,7 +31,6 @@
                                             </a>
                                         </header>
                                @foreach ($section->lessons as  $lesson)
-
                                         <div class="card-content is-hidden">
                                             <div class="content">
                                                 <a href="#">
@@ -51,7 +48,6 @@
                                         @endforeach
                                     </div>
                                 </li>
-
                                 @endforeach
                         </ul>
                     </aside>
@@ -60,23 +56,13 @@
                     <div class="column is-6 has-background-light">
                         <div class="container3">
                             <div class="overlay">
-
                                 <p class="button has-background-white" style="width: 100%" >video title</p>
-
-
-
-
                             </div>
                             <video id="video" width="770" height="882" onclick="play();">
                                 <source src="{{ asset('/Video/essam.mp4') }}" type="video/mp4" />
                             </video>
-
                         </div>
                     </div>
-
-
-
-
             </div>
         </div>
 
