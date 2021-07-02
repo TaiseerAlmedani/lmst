@@ -72,12 +72,20 @@
 
                         <div class="buttons pb-6">
                             <div class="button is-warning has-text-dark is-large pr-6 pl-6">
-                            <form action="{{ route('course_user.store' ) }}" method="POST">
-                                @csrf
-                                <input type="hidden" value="{{ $course->id }}" name="course_id">
-                                <input type="hidden" value="{{ Auth::user()->id }}" name="user_id">
-                                <button type="submit">Enroll</button>
-                            </form>
+                                @if ($course->price == 0)
+                                    <a href="{{ route('course_details.show' , $course) }}">
+                                    <button type="submit">Enroll dor free</button>
+
+                                    </a>
+                                @else
+                                <form action="{{ route('course_user.store' ) }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" value="{{ $course->id }}" name="course_id">
+                                    <input type="hidden" value="{{ Auth::user()->id }}" name="user_id">
+                                    <button type="submit">Enroll</button>
+                                </form>
+
+                                @endif
                             </div>
                         </div>
 
