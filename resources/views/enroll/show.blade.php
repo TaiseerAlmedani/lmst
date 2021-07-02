@@ -10,6 +10,7 @@
         .card+.card {
             margin-top: 20px;
         }
+
     </style>
 
     <section class="hero is-large">
@@ -30,39 +31,60 @@
                                                 <i class="fa fa-angle-down"></i>
                                             </a>
                                         </header>
-                               @foreach ($section->lessons as  $lesson)
-                                        <div class="card-content is-hidden">
-                                            <div class="content">
-                                                <a href="#">
-                                                    @if ($lesson->type == 'video')
-                                                <i class="mdi mdi-play-circle"
-                                                    style="margin-top: 3px; font-size: 20px; display: inline"></i>
-                                            @elseif ($lesson->type == "pdf")
-                                                <i class="mdi mdi-file" style="font-size: 20px; display: inline"></i>
-                                            @else
-                                            @endif
-                                             {{ $lesson->name }} <br>
-                                                </a>
+                                        @foreach ($section->lessons as $lesson)
+                                            <div class="card-content is-hidden">
+                                                <div class="content">
+                                                    <a href="{{ route('show.show' , $lesson) }}">
+                                                        @if ($lesson->type == 'video')
+                                                            <i class="mdi mdi-play-circle"
+                                                                style="margin-top: 3px; font-size: 20px; display: inline"></i>
+                                                        @elseif ($lesson->type == "pdf")
+                                                            <i class="mdi mdi-file"
+                                                                style="font-size: 20px; display: inline"></i>
+                                                        @else
+                                                        @endif
+
+                                                            {{ $lesson->name }}
+                                                        </a>
+
+                                                        <br>
+
+                                                </div>
                                             </div>
-                                        </div>
                                         @endforeach
                                     </div>
                                 </li>
-                                @endforeach
+                            @endforeach
                         </ul>
                     </aside>
                 </div>
                 <div class="column is-2" hidden></div>
-                    <div class="column is-6 has-background-light">
-                        <div class="container3">
-                            <div class="overlay">
-                                <p class="button has-background-white" style="width: 100%" >video title</p>
-                            </div>
-                            <video id="video" width="770" height="882" onclick="play();">
-                                <source src="{{ asset('/Video/essam.mp4') }}" type="video/mp4" />
-                            </video>
+                @foreach ($course->sections as $section)
+                    @foreach ($section->lessons as  $lesson)
+                    <div class="container3">
+                        <div class="overlay">
+                            <p class="button has-background-white" style="width: 100%">{{ $lesson->name  }}</p>
                         </div>
+                        <video id="video" width="770" height="882" onclick="play();">
+                            <source src="{{ asset('/Video/essam.mp4') }}" type="video/mp4" />
+                        </video>
                     </div>
+                        @if ($loop->first) @break
+                        @endif
+                    @endforeach
+                    @if ($loop->first) @break
+                    @endif
+                @endforeach
+                <div class="column is-6 has-background-light">
+                    {{-- <div class="container3">
+                        <div class="overlay">
+                            <p class="button has-background-white" style="width: 100%">video title</p>
+                        </div>
+                        <video id="video" width="770" height="882" onclick="play();">
+                            <source src="{{ asset('/Video/essam.mp4') }}" type="video/mp4" />
+                        </video>
+                    </div> --}}
+                </div>
             </div>
         </div>
 

@@ -13,6 +13,8 @@ use App\Http\Controllers\CourseUserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageCourseController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProgressController;
+use App\Http\Controllers\ShowController;
 use App\Models\CourseDetails;
 use App\Models\courseUser;
 use Illuminate\Support\Facades\Route;
@@ -94,6 +96,11 @@ Route::resource('course_user',CourseUserController::class);
 Route::resource('course',PageCourseController::class);
 
 Route::resource('course_details',CourseDetailsController::class);
+
+Route::resource('show',ShowController::class);
+
+Route::resource('progress',ProgressController::class);
+
 
 
 

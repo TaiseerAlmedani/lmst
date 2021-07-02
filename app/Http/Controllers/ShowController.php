@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
 use App\Models\Lesson;
-use App\Models\Section;
 use Illuminate\Http\Request;
 
-class CourseDetailsController extends Controller
+class ShowController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -46,22 +44,12 @@ class CourseDetailsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Course $course_detail)
+    public function show(Lesson $show )
     {
-        // dd($course_detail);
-
-        $section = Section::all();
-        $lessons = Lesson::all();
-
-        return view('enroll.show' ,
-            [
-                'course' => $course_detail ,
-                'section' => $section ,
-                'lessons' => $lessons
-            ]
-        );
+        // $lesson =$show->name;
+        // dd($show);
+        return view('courses.video',['lesson' => $show]);
     }
-
 
     /**
      * Show the form for editing the specified resource.

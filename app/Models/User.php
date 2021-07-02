@@ -51,5 +51,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Course::class)->withPivot('activation');
     }
 
+    public function lessons(){
+        return $this->belongsToMany(Lesson::class)->withPivot('done');
+    }
+
+
+
 
 }

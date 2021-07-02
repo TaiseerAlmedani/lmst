@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
-use App\Models\Lesson;
-use App\Models\Section;
+use App\Models\Progres;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class CourseDetailsController extends Controller
+class ProgressController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,7 +36,33 @@ class CourseDetailsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+
+        $user = Auth::user()->id;
+
+        // $user->lessons()->sync([
+        //     $request->id => ['lesson_id' => true],
+        //     $user => ['user_id' => true],
+        //     1 => ['done' => true],
+
+        // ]);
+
+        $progress = Progres::create([
+            'user_id' => $user,
+            'lesson_id' => $request->lesson_id,
+            'done'=>'1',
+        ]);
+
+        // $lesson = $request->
+
+        // redirect('/course_details');
+        // return back()->withInput();
+
+        return redirect()->action([CourseDetailsController::class,'show'],['id'=> 1]);
+
+        // return view(');
+
+
     }
 
     /**
@@ -46,22 +71,10 @@ class CourseDetailsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Course $course_detail)
+    public function show($id)
     {
-        // dd($course_detail);
-
-        $section = Section::all();
-        $lessons = Lesson::all();
-
-        return view('enroll.show' ,
-            [
-                'course' => $course_detail ,
-                'section' => $section ,
-                'lessons' => $lessons
-            ]
-        );
+        //
     }
-
 
     /**
      * Show the form for editing the specified resource.
