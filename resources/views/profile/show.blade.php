@@ -32,7 +32,7 @@
         <section class="main-content columns is-fullheight">
 
             <aside class="column is-2 is-narrow-mobile is-fullheight section is-hidden-mobile">
-                <p class="menu-label is-hidden-touch" style="padding-left:10%; font-size:1.1rem">Welcome {{ $profile->name }}</p>
+                <p class="menu-label is-hidden-touch" style="padding-left:10%; font-size:1.1rem">Welcome ! {{ $profile->name }}</p>
                 <img src="{{ $profile->picture}}" alt="cc" style="
                     position: relative;
                     left:12%;
@@ -160,6 +160,7 @@
                     <br />
 
                 </div>
+                <a href="{{ route('profile.edit' , $profile) }}"><button class="button is-link is-outlined">Edit Profile</button></a>
             </div>
 
         </section>
