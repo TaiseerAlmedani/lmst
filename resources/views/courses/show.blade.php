@@ -74,7 +74,7 @@
                             <div class="button is-warning has-text-dark is-large pr-6 pl-6">
                                 @if ($course->price == 0)
                                     <a href="{{ route('course_details.show' , $course) }}">
-                                    <button type="submit">Enroll dor free</button>
+                                    <button type="submit">Enroll for free</button>
 
                                     </a>
                                 @else

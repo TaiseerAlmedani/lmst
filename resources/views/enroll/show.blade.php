@@ -63,12 +63,10 @@
                 @foreach ($course->sections as $section)
                     @foreach ($section->lessons as  $lesson)
                     <div class="container3">
-                        <div class="overlay">
-                            <p class="button has-background-white" style="width: 100%">{{ $lesson->name  }}</p>
-                        </div>
-                        <video id="video" width="770" height="882" onclick="play();">
+
+                        {{-- <video id="video" width="770" height="882" controls onclick="play();">
                             <source src="{{ asset('/Video/essam.mp4') }}" type="video/mp4" />
-                        </video>
+                        </video> --}}
                     </div>
                         @if ($loop->first) @break
                         @endif
@@ -77,14 +75,17 @@
                     @endif
                 @endforeach
                 <div class="column is-6 has-background-light">
-                    {{-- <div class="container3">
+                    <div class="overlay">
+                        <p class="button has-background-white" style="width: 100%">{{ $lesson->name  }}</p>
+                    </div>
+                    <div class="container3">
                         <div class="overlay">
-                            <p class="button has-background-white" style="width: 100%">video title</p>
+                            {{-- <p class="button has-background-white" style="width: 100%">video title</p> --}}
                         </div>
-                        <video id="video" width="770" height="882" onclick="play();">
+                        <video id="video" width="770" height="882" controls onclick="play();">
                             <source src="{{ asset('/Video/essam.mp4') }}" type="video/mp4" />
                         </video>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </div>
