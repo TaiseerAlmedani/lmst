@@ -56,7 +56,8 @@ class LessonController extends Controller
 
         ]);
 
-        return view('admin.home');
+        $lessons = Lesson::all();
+        return view('admin.lessons.index',['lessons' => $lessons]);
     }
 
     /**

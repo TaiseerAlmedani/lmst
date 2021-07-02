@@ -54,7 +54,9 @@ class SectionsController extends Controller
             'course_id'          => $request->course_id,
         ]);
 
-        return view('admin.home');
+        $sections = Section::all();
+
+        return view('admin.sections.index',['sections' => $sections]);
     }
 
     /**

@@ -38,9 +38,10 @@
                                 {{ $user->name }}
                                 {{ $user->pivot->activation }}
 
-                                <a href="{{ route('course.show', $course) }}">
+                                {{-- <a href="{{ route('course.show', $course) }}">
                                     <span class="button ">Active</span>
-                                </a>
+                                </a> --}}
+
                                </li>
                             @endif
                         </ul>

@@ -30,7 +30,7 @@
                 @include('adminlte::partials.navbar.menu-item-logout-link')
             @endif
         @endif
-
+        <a href="{{ route('home') }}">Home</a>
         {{-- Right sidebar toggler link --}}
         @if(config('adminlte.right_sidebar'))
             @include('adminlte::partials.navbar.menu-item-right-sidebar-toggler')

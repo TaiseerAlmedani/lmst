@@ -40,7 +40,7 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-
+// dd($request->all());
         $request->validate([
             'name'              => 'required|min:3|max:30',
             'slug'              => 'required|min:3|max:30',
@@ -64,11 +64,12 @@ class CourseController extends Controller
             'price'         => $request->price ,
             'description'   => $request->description ,
             'category_id'   => $request->category_id ,
-            'rate'          => '0',
             'hours'         => $request->hours,
+            'rate'          => '0',
         ]);
 
-        return view('admin.home');
+        $courses = Course::all();
+        return view('admin.courses.index',['courses' => $courses]);
 
 
     }
