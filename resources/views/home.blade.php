@@ -69,26 +69,25 @@
                             <div class="card-content  modal-button" data-target="modal-card2">
                                 <div class="content">
                                     <h4>{{ $course->slug }}</h4>
-                                    <p>{{ Str::limit($course->description, 50, '...') }}</p>
+                                    <p>{{ Str::limit($course->description, 30, '...') }}</p>
 
 
-                                    @foreach ($course->tags as $tag)
+                                    {{-- @foreach ($course->tags as $tag)
                                         <p>TAg : {{ $tag->name }}</p>
-                                    @endforeach
-
-                                    <a href="{{ route('course.show', $course) }}">
+                                    @endforeach --}}
 
 
-                                        <span
-                                            class="button is-dark has-text-warning has-text-weight-bold modal-button is-fullwidth">View</span>
-                                    <p>{{ Str::limit($course->description , 50, '...')}}</p>
+                                        {{-- <p>{{ Str::limit($course->description, 50, '...') }}</p>
                                         @foreach ($course->tags as $tag)
-                                        <p>TAg : {{ $tag->name }}</p>
-                                        @endforeach
-
-                                    <a href="{{ route('course_details.show', $course) }}">
-                                        <span class="button is-link modal-button is-fullwidth">View00</span>
-                                    </a>
+                                            <p>TAg : {{ $tag->name }}</p>
+                                        @endforeach --}}
+                                        <a href="{{ route('course.show', $course) }}">
+                                            <span
+                                                class="button is-dark has-text-warning has-text-weight-bold modal-button is-fullwidth">View</span>
+                                        </a>
+                                        {{-- <a href="{{ route('course_details.show', $course) }}">
+                                            <span class="button is-link modal-button is-fullwidth">View00</span>
+                                        </a> --}}
                                 </div>
                             </div>
                         </div>
@@ -536,95 +535,95 @@
     </style>
 
     <div class="body44">
-    <div class="container3">
-        <p class="title  has-text-centered has-text-weight-bold mb-6">
-            Our Student Say
-          </p>
-        <input type="radio" name="dot" id="one">
-        <input type="radio" name="dot" id="two">
-        <div class="main-card">
-            <div class="cards">
-                <div class="card">
-                    <div class="content">
-                        <div class="img">
-                            <img src="images/img1.jpg" alt="">
+        <div class="container3">
+            <p class="title  has-text-centered has-text-weight-bold mb-6">
+                Our Student Say
+            </p>
+            <input type="radio" name="dot" id="one">
+            <input type="radio" name="dot" id="two">
+            <div class="main-card">
+                <div class="cards">
+                    <div class="card">
+                        <div class="content">
+                            <div class="img">
+                                <img src="images/img1.jpg" alt="">
+                            </div>
+                            <div class="details">
+                                <div class="name">Andrew Neil</div>
+                                <div class="job">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                </div>
+                            </div>
                         </div>
-                        <div class="details">
-                            <div class="name">Andrew Neil</div>
-                            <div class="job">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <div class="img">
+                                <img src="images/img2.jpg" alt="">
+                            </div>
+                            <div class="details">
+                                <div class="name">Jasmine Carter</div>
+                                <div class="job">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <div class="img">
+                                <img src="images/img3.jpg" alt="">
+                            </div>
+                            <div class="details">
+                                <div class="name">Justin Chung</div>
+                                <div class="job">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="content">
-                        <div class="img">
-                            <img src="images/img2.jpg" alt="">
-                        </div>
-                        <div class="details">
-                            <div class="name">Jasmine Carter</div>
-                            <div class="job">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                <div class="cards">
+                    <div class="card">
+                        <div class="content">
+                            <div class="img">
+                                <img src="{{ asset('/images/img4.jpg') }}" alt="">
+                            </div>
+                            <div class="details">
+                                <div class="name">Appolo Reef</div>
+                                <div class="job">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="card">
-                    <div class="content">
-                        <div class="img">
-                            <img src="images/img3.jpg" alt="">
+                    <div class="card">
+                        <div class="content">
+                            <div class="img">
+                                <img src="{{ asset('/images/img5.jpg') }}" alt="">
+                            </div>
+                            <div class="details">
+                                <div class="name">Adrina Calvo</div>
+                                <div class="job">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                </div>
+                            </div>
                         </div>
-                        <div class="details">
-                            <div class="name">Justin Chung</div>
-                            <div class="job">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <div class="img">
+                                <img src="{{ asset('/images/img6.jpeg') }}" alt="">
+                            </div>
+                            <div class="details">
+                                <div class="name">Nicole Lewis</div>
+                                <div class="job">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="cards">
-                <div class="card">
-                    <div class="content">
-                        <div class="img">
-                            <img src="{{ asset('/images/img4.jpg')}}" alt="">
-                        </div>
-                        <div class="details">
-                            <div class="name">Appolo Reef</div>
-                            <div class="job">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="content">
-                        <div class="img">
-                            <img src="{{ asset('/images/img5.jpg') }}" alt="">
-                        </div>
-                        <div class="details">
-                            <div class="name">Adrina Calvo</div>
-                            <div class="job">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="content">
-                        <div class="img">
-                            <img src="{{ asset('/images/img6.jpeg') }}" alt="">
-                        </div>
-                        <div class="details">
-                            <div class="name">Nicole Lewis</div>
-                            <div class="job">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="button">
+                <label for="one" class=" active one"></label>
+                <label for="two" class="two"></label>
             </div>
         </div>
-        <div class="button">
-            <label for="one" class=" active one"></label>
-            <label for="two" class="two"></label>
-        </div>
-    </div>
     </div>
 
 
