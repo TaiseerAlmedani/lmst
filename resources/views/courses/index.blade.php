@@ -37,23 +37,25 @@
 
 </style>
 <x-layouts.app>
-    <section class="hero is-info is-fullheight">
+    <section class="is-info is-fullheight" >
         <div class="hero-head">
             <x-navbar />
         </div>
         <div class="hero-body">
-            <div class="container has-text-centered">
-                <div class="column is-6 is-offset-3">
-                    <h1 class="title">
-                        Seeram
-                        <br>
-                        Learning Mangment System
+            <div class="container has-text-left">
+                <div class="columns">
+                <div class="column  is-4 ">
+                    <h1 class="title has-text-dark has-text-weight-bold" style="font-size: 65px; margin-top: 40%; margin-left: 30%;">
+                        Courses
                     </h1>
-                    <h1 class="subtitle is-size-4">
-                        All Courses We Have It
+                    <h1 class="subtitle has-text-dark" style="margin-left: 30%;">
+                        Choise Your Course
                     </h1>
                 </div>
-            </div>
+                <div class="column is-8">
+                    <img src="{{ asset('/images/courses_header.png') }}" alt="">
+                </div>
+            </div></div>
         </div>
     </section>
 
@@ -106,7 +108,7 @@
                                                     </div>
                                                 </div>
                                                 <a href="{{ route('course.show', $course) }}">
-                                                    <span class="button is-link modal-button is-fullwidth">View</span>
+                                                    <span class="button is-dark has-text-warning has-weight-bold mt-5 modal-button is-fullwidth">View</span>
                                                 </a>
                                             </div>
                                         </div>

@@ -22,6 +22,19 @@
                         <p class="menu-label">
                         </p>
                         <ul class="menu-list">
+                            <li>
+                                <div class="card is-fullwidth">
+                                    <header class="card-header">
+                                        <p class="card-header-title">section #1</p>
+                                        <a class="card-header-icon card-toggle">
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                    </header>
+                                    <div class="card-content is-hidden">
+                                        <div class="content">
+                                            <a href="#">
+                                                icone here
+                                                ايقونة حسب نوع الملف Content goes here <small>Small text</small>
                             @foreach ($course->sections as $section)
                                 <li>
                                     <div class="card is-fullwidth">
